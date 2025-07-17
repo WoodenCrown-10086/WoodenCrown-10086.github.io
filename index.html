@@ -179,7 +179,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="螺旋矩阵"><a href="#螺旋矩阵" class="headerlink" title="螺旋矩阵"></a>螺旋矩阵</h2><p>题目描述：给你一个 <em>m</em> 行 <em>n</em> 列的矩阵 <em>matrix</em> ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素.<br></p>
-<p><img src="/./img/s16580207172025.png" alt="螺旋矩阵"><br><br><font color='#EE7942'>难点</font><br><br><br>1,矩阵不是方阵<br><br>2,重复访问问题<br><br>3,拐弯如何拐<br></p>
+<p><img src="/./img/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5.png" alt="螺旋矩阵"><br><br><font color='#EE7942'>难点</font><br><br><br>1,矩阵不是方阵<br><br>2,重复访问问题<br><br>3,拐弯如何拐<br></p>
 <hr>
 <h4 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h4><p>1，一开始想的，我直接每次逆时针旋转一次矩阵然后截取第一排不就好了嘛？ 但是旋转矩阵并非易事，会让时间复杂度飙升。<br><br>2，那我设置条件，遇到右边没有了就往下走，下面没有了就往左走，左边没有了就往上走，上面没有了就往右走不就行了？————显然不行，对于图中矩阵可行，但是对于大于3行的矩阵，往上走时右边又可以访问了，程序就会直接往右边，而不是将上面的遍历完。<br></p>
 <h4 id="我的解"><a href="#我的解" class="headerlink" title="我的解"></a>我的解</h4><p>设置转弯条件，按照当前路径一直走，直到遇到转弯的条件就右转（顺时针）。</p>
