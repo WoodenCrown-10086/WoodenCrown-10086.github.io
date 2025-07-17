@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Promise学习 | NARUTO</title>
+  <title>Today算法总结 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS异步方法1 回调函数 代码执行完成再执行的函数  第二章hahahah">
+  <meta name="description" content="螺旋矩阵题目描述：给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素.难点1,矩阵不是方阵2,重复访问问题3,拐弯如何拐  我的思路1，一开始想的，我直接每次逆时针旋转一次矩阵然后截取第一排不就好了嘛？ 但是旋转矩阵并非易事，会让时间复杂度飙升。2，那我设置条件，遇到右边没有了就往下走，下面没有了就往左走，左边没有了就往上走，上面没有了就往右走不就行了？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Promise学习">
-<meta property="og:url" content="http://example.com/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="Today算法总结">
+<meta property="og:url" content="http://example.com/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="JS异步方法1 回调函数 代码执行完成再执行的函数  第二章hahahah">
+<meta property="og:description" content="螺旋矩阵题目描述：给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素.难点1,矩阵不是方阵2,重复访问问题3,拐弯如何拐  我的思路1，一开始想的，我直接每次逆时针旋转一次矩阵然后截取第一排不就好了嘛？ 但是旋转矩阵并非易事，会让时间复杂度飙升。2，那我设置条件，遇到右边没有了就往下走，下面没有了就往左走，左边没有了就往上走，上面没有了就往右走不就行了？">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-16T09:48:26.000Z">
-<meta property="article:modified_time" content="2025-07-17T04:07:15.233Z">
+<meta property="og:image" content="http://example.com/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5.png">
+<meta property="og:image" content="http://example.com/img/houchebu.jpg">
+<meta property="og:image" content="http://example.com/img/xuanzhuan.png">
+<meta property="article:published_time" content="2025-07-17T08:50:56.000Z">
+<meta property="article:modified_time" content="2025-07-17T09:57:30.392Z">
 <meta property="article:author" content="HuXiao">
-<meta property="article:tag" content="js异步编程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5.png">
   
     <link rel="alternative" href="/atom.xml" title="NARUTO" type="application/atom+xml">
   
@@ -161,29 +164,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Today算法总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Promise学习
+      Today算法总结
     </h1>
   
 
         
-        <a href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2025-07-16T09:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-16</time>
+        <a href="/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2025-07-17T08:50:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JS异步方法"><a href="#JS异步方法" class="headerlink" title="JS异步方法"></a>JS异步方法</h2><p>1 回调函数 代码执行完成再执行的函数</p>
+        <h2 id="螺旋矩阵"><a href="#螺旋矩阵" class="headerlink" title="螺旋矩阵"></a>螺旋矩阵</h2><p>题目描述：给你一个 <em>m</em> 行 <em>n</em> 列的矩阵 <em>matrix</em> ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素.<br><br><img src="./螺旋矩阵.png"/><br><br><font color='#EE7942'>难点</font><br><br><br>1,矩阵不是方阵<br><br>2,重复访问问题<br><br>3,拐弯如何拐<br></p>
 <hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h2 id="hahahah"><a href="#hahahah" class="headerlink" title="hahahah"></a>hahahah</h2>
+<h4 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h4><p>1，一开始想的，我直接每次逆时针旋转一次矩阵然后截取第一排不就好了嘛？ 但是旋转矩阵并非易事，会让时间复杂度飙升。<br><br>2，那我设置条件，遇到右边没有了就往下走，下面没有了就往左走，左边没有了就往上走，上面没有了就往右走不就行了？————显然不行，对于图中矩阵可行，但是对于大于3行的矩阵，往上走时右边又可以访问了，程序就会直接往右边，而不是将上面的遍历完。<br></p>
+<h4 id="我的解"><a href="#我的解" class="headerlink" title="我的解"></a>我的解</h4><p>设置转弯条件，按照当前路径一直走，直到遇到转弯的条件就右转（顺时针）。<br><br><br>设置一个标志位flag&#x3D;0，1，2，3，分辨代表当前前进方向，右下左上，每次遇到转弯条件就+1并模4.<br><br>转弯条件就是，下一步没东西了或者已经访问过了。所以访问过的地方直接置为200（原题数据在±200之间）<br>遇到这个数据就变换flag。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spiralOrder = <span class="keyword">function</span>(<span class="params">matrix</span>) &#123;</span><br><span class="line"><span class="keyword">let</span> ans=[];</span><br><span class="line"><span class="keyword">let</span> x=<span class="number">0</span>,y=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> flag=<span class="number">0</span>;<span class="comment">//0向右走；1向下，2向左，3向上</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;matrix.<span class="property">length</span>*matrix[<span class="number">0</span>].<span class="property">length</span>;i++)&#123;</span><br><span class="line">    ans.<span class="title function_">push</span>(matrix[x][y]);</span><br><span class="line">    matrix[x][y]=<span class="number">200</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;now x=&quot;</span>+x+<span class="string">&#x27;y=&#x27;</span>+y)</span><br><span class="line">    <span class="keyword">switch</span>(flag)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            y++;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            x++;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            y--;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            x--;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="attr">default</span>: </span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ERROR!!!&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(y&gt;matrix[<span class="number">0</span>].<span class="property">length</span>-<span class="number">1</span> || x&gt;matrix.<span class="property">length</span>-<span class="number">1</span> || matrix[x][y]==<span class="literal">undefined</span>||matrix[x][y]== <span class="number">200</span>)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(flag)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            y--;</span><br><span class="line">            x++;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            x--;</span><br><span class="line">            y--;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            y++;</span><br><span class="line">            x--;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            x++;</span><br><span class="line">            y++;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="attr">default</span>: </span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ERROR!!!&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        flag=(flag+<span class="number">1</span>)%<span class="number">4</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Flag===&quot;</span>+flag);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+为什么有两个switch呢？这就是后撤步
+
+<p><img src="/./img/houchebu.jpg" alt="bendi"><br>因为我是走到下一步再判断的这里行不行的，所以如果不行要后撤一步。 虽然代码多，但提交也是0ms<br></p>
+<hr>
+<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。<br><br>你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。<br></p>
+<p><img src="/./img/xuanzhuan.png" alt="旋转矩阵"><br><br><font color='#EE7942'>难点</font><br><br>1,原地旋转，不开额外矩阵。<br></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>1，一开始想的不能开矩阵，那就开个列表（智商不够），让第一行放在最后一列，只需要开个列表存储一列的值来交换。但是发现我的思维太简单，这样问题太多了，比如交换之后下一行的末尾值已经改变。<br><br>2，一层一层旋转呢？提取出一层的某个值，然后它后面的与i个放过来，然后再后面的一个放过来，最后把提取出来的放在最后一个位置就好了。但是发现这样每次移动转弯条件不好控制，因为不能跑到别的层，且数组大了后一样很复杂。</p>
+<h4 id="正解"><a href="#正解" class="headerlink" title="正解"></a>正解</h4><p>网上看的，发现原来是找规律加上数学矩阵方面的知识就很简单。<br><br>只需要转置加上行翻转就行了<br><br>而转置只用交换对角线元素即可空间O(1),反转也是O(1)空间<br></p>
+<img scr="./img/fanzhuanguocheng.png" width=324 height=64/>
+
+
+
+
+
+
+
       
 
       
@@ -191,17 +213,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js异步编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -252,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -266,15 +277,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          今日算法总结
-        
-      </div>
-    </a>
   
+    <a href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Promise学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -396,10 +403,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">js异步编程</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -453,7 +456,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">重邮菜鸟一枚&lt;br&gt;&lt;br&gt;前端努力中&lt;br&gt;&lt;br&gt;Vue</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">重邮菜鸟一枚 || 前端努力中 || Vue</div>
   	  	
     	</section>
     
