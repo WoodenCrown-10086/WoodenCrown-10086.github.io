@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>NARUTO</title>
+  <title>Tag: js异步编程 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="NARUTO">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/tags/js%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="NARUTO">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="HuXiao">
@@ -158,178 +158,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Promise学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/">Promise学习</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T04:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-17</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>1 不用promise的异步是基于回调函数与事件队列完成的。回调函数本身是同步的，但是通过异步API将回调函数放入事件队列才能完成异步功能。如 <em>setTimeout</em> 等。<br><br><font color='#FF8247'>为什么不直接将普通函数放入事件队列？</font><br><br><br>____上下文的缺失：普通函数放入事件队列会丢失上下文，而回调函数会保留<br><br>____参数传递： 异步操作需要参数传递，而回调函数提便于传递<br><br>____监听与控制：异步操作是未知的，不知道何时完成，而回调函数可以在异步操作完成时做事。<br><br><font color='#EE6363' size=3>不足</font><br><br>____回调地狱：如果回调函数里还要进行异步操作，就会产生嵌套，这样嵌套层级深了代码语义就很不清晰，如下<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟异步获取用户数据</span></span><br><span class="line"><span class="title function_">getUser</span>(userId, <span class="keyword">function</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="comment">// 获取用户后获取订单</span></span><br><span class="line">  <span class="title function_">getOrders</span>(user.<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">orders</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取订单后获取产品详情</span></span><br><span class="line">    <span class="title function_">getProducts</span>(orders[<span class="number">0</span>].<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">product</span>) &#123;</span><br><span class="line">      <span class="comment">// 获取产品后获取评论</span></span><br><span class="line">      <span class="title function_">getReviews</span>(product.<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">reviews</span>) &#123;</span><br><span class="line">        <span class="comment">// 最后显示评论</span></span><br><span class="line">        <span class="title function_">displayReviews</span>(reviews);</span><br><span class="line">      &#125;, errorHandler);</span><br><span class="line">    &#125;, errorHandler);</span><br><span class="line">  &#125;, errorHandler);</span><br><span class="line">&#125;, errorHandler);</span><br></pre></td></tr></table></figure>
-<br>
-
-<hr>
-<h3 id="Promise异步"><a href="#Promise异步" class="headerlink" title="Promise异步"></a>Promise异步</h3><p>Promise是ES6提供的类，使用时会在事件完成后返回，要么是成功的结果，要么是失败的原因<br><br>Promise有三种状态：pending、fulfilled、rejected<br><br>pending：默认状态，尚未执行，没成功也没失败<br><br>fulfilled：执行成功，由reolve()触发<br><br>rejected:  执行失败，由reject()触发<br><br>一定要执行resolve或者reject否则会一直在pending状态直到程序崩溃<br><br>Promise通过链式调用解决回调地狱问题（.then().then().then()）提高可读性。<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="title function_">resolve</span>(<span class="number">1</span>);</span><br><span class="line">&#125;);</span><br><span class="line">promise.<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">     <span class="keyword">return</span> value * <span class="number">2</span>;</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">     <span class="keyword">return</span> value * <span class="number">2</span>;</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">    &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(err)&#125;);</span><br></pre></td></tr></table></figure>
-<br>
-.catch就用于捕获错误，.then就用于成功后执行的逻辑，还有一个.finally就是最终执行的<br>
----
----
-持后面遇到不懂再更新
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2025" class="archive-year">2025</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-今日算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">今日算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-16T12:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="除自身以外数组的乘积"><a href="#除自身以外数组的乘积" class="headerlink" title="除自身以外数组的乘积"></a>除自身以外数组的乘积</h2><p>给你一个整数数组 <em>nums</em>，返回 数组 <em>answer</em> ，其中 <em>answer[i]</em> 等于 <em>nums</em> 中除 <em>nums[i]</em> 之外其余各元素的乘积 。<br>题目数据 保证 数组 _nums_之中任意元素的全部前缀元素和后缀的乘积都在  <em>32</em> 位 整数范围内。<br><strong>请 不要使用除法，且在 <em>O(n)</em> 时间复杂度内完成此题。</strong></p>
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><p>1，空间复杂度要求_O[n]_<br>2，除了某个元素，前后的所有都要乘</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">Promise学习</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
   	<time datetime="2025-07-16T09:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-16</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS异步方法"><a href="#JS异步方法" class="headerlink" title="JS异步方法"></a>JS异步方法</h2><p>1 回调函数 代码执行完成再执行的函数</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h2 id="hahahah"><a href="#hahahah" class="headerlink" title="hahahah"></a>hahahah</h2>
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">Promise学习</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -341,41 +197,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -397,10 +231,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
