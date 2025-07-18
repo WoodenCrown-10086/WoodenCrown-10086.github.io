@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Promise学习 | NARUTO</title>
+  <title>VUE今日学习 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="异步1 不用promise的异步是基于回调函数与事件队列完成的。回调函数本身是同步的，但是通过异步API将回调函数放入事件队列才能完成异步功能。如 setTimeout 等。为什么不直接将普通函数放入事件队列？____上下文的缺失：普通函数放入事件队列会丢失上下文，而回调函数会保留____参数传递： 异步操作需要参数传递，而回调函数提便于传递____监听与控制：异步操作是未知的，不知道何时完成，而">
+  <meta name="description" content="WatchEffect对于普通watch监视，需要传入参数确定监视对象。 1watch([target1,target2],(newValue,oldValue)&#x3D;&gt;&#123;...&#125;) 那么如果监视数据很多，就要一个一个传入很多参数。而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？当你在回调中使用哪些数据就监视哪些数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Promise学习">
-<meta property="og:url" content="http://example.com/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="VUE今日学习">
+<meta property="og:url" content="http://example.com/2025/07/18/vue%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="异步1 不用promise的异步是基于回调函数与事件队列完成的。回调函数本身是同步的，但是通过异步API将回调函数放入事件队列才能完成异步功能。如 setTimeout 等。为什么不直接将普通函数放入事件队列？____上下文的缺失：普通函数放入事件队列会丢失上下文，而回调函数会保留____参数传递： 异步操作需要参数传递，而回调函数提便于传递____监听与控制：异步操作是未知的，不知道何时完成，而">
+<meta property="og:description" content="WatchEffect对于普通watch监视，需要传入参数确定监视对象。 1watch([target1,target2],(newValue,oldValue)&#x3D;&gt;&#123;...&#125;) 那么如果监视数据很多，就要一个一个传入很多参数。而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？当你在回调中使用哪些数据就监视哪些数据">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-17T04:05:20.000Z">
-<meta property="article:modified_time" content="2025-07-17T05:31:07.186Z">
+<meta property="article:published_time" content="2025-07-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-18T06:44:50.417Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -160,48 +160,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Promise学习" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Promise学习
+      VUE今日学习
     </h1>
   
 
         
-        <a href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T04:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-17</time>
+        <a href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2025-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>1 不用promise的异步是基于回调函数与事件队列完成的。回调函数本身是同步的，但是通过异步API将回调函数放入事件队列才能完成异步功能。如 <em>setTimeout</em> 等。<br><br><font color='#FF8247'>为什么不直接将普通函数放入事件队列？</font><br><br><br>____上下文的缺失：普通函数放入事件队列会丢失上下文，而回调函数会保留<br><br>____参数传递： 异步操作需要参数传递，而回调函数提便于传递<br><br>____监听与控制：异步操作是未知的，不知道何时完成，而回调函数可以在异步操作完成时做事。<br><br><font color='#EE6363' size=3>不足</font><br><br>____回调地狱：如果回调函数里还要进行异步操作，就会产生嵌套，这样嵌套层级深了代码语义就很不清晰，如下<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟异步获取用户数据</span></span><br><span class="line"><span class="title function_">getUser</span>(userId, <span class="keyword">function</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="comment">// 获取用户后获取订单</span></span><br><span class="line">  <span class="title function_">getOrders</span>(user.<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">orders</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取订单后获取产品详情</span></span><br><span class="line">    <span class="title function_">getProducts</span>(orders[<span class="number">0</span>].<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">product</span>) &#123;</span><br><span class="line">      <span class="comment">// 获取产品后获取评论</span></span><br><span class="line">      <span class="title function_">getReviews</span>(product.<span class="property">id</span>, <span class="keyword">function</span>(<span class="params">reviews</span>) &#123;</span><br><span class="line">        <span class="comment">// 最后显示评论</span></span><br><span class="line">        <span class="title function_">displayReviews</span>(reviews);</span><br><span class="line">      &#125;, errorHandler);</span><br><span class="line">    &#125;, errorHandler);</span><br><span class="line">  &#125;, errorHandler);</span><br><span class="line">&#125;, errorHandler);</span><br></pre></td></tr></table></figure>
-<br>
+        <hr>
+<h2 id="WatchEffect"><a href="#WatchEffect" class="headerlink" title="WatchEffect"></a>WatchEffect</h2><p>对于普通watch监视，需要传入参数确定监视对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watch</span>([target1,target2],<span class="function">(<span class="params">newValue,oldValue</span>)=&gt;</span>&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+<p>那么如果监视数据很多，就要一个一个传入很多参数。<br><br>而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？<br><br>当你在回调中使用哪些数据就监视哪些数据。<br><br>它们的区别可以理解成：你帮我看着张三、李四，吃饭就告诉我  你看着，有人吃饭就告诉我<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watchEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
----
-### Promise异步
-Promise是ES6提供的类，使用时会在事件完成后返回，要么是成功的结果，要么是失败的原因<br>
-Promise有三种状态：pending、fulfilled、rejected<br>
-pending：默认状态，尚未执行，没成功也没失败<br>
-fulfilled：执行成功，由reolve()触发<br>
-rejected:  执行失败，由reject()触发<br>
-一定要执行resolve或者reject否则会一直在pending状态直到程序崩溃<br>
-Promise通过链式调用解决回调地狱问题（.then().then().then()）提高可读性。<br>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="title function_">resolve</span>(<span class="number">1</span>);</span><br><span class="line">&#125;);</span><br><span class="line">promise.<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">     <span class="keyword">return</span> value * <span class="number">2</span>;</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">     <span class="keyword">return</span> value * <span class="number">2</span>;</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">    &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(err)&#125;);</span><br></pre></td></tr></table></figure>
-<br>
-.catch就用于捕获错误，.then就用于成功后执行的逻辑，还有一个.finally就是最终执行的<br>
----
----
-持后面遇到不懂再更新
-
-
-
+<hr>
+<h2 id="标签内部的ref属性"><a href="#标签内部的ref属性" class="headerlink" title="标签内部的ref属性"></a>标签内部的ref属性</h2><p>对于普通的获取标签操作，可以对标签设置id，使用getElementById获取标签，对于一个单独组件内部这是可行的，但是组件包含时，其他组件中可能存在相同id，这样先声明的id就会覆盖后声明的，导致通过id过去只能获取到先声明的id标签<br><br>而ref创建容器就能够隔离。<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">ref</span>=<span class="string">&quot;变量名&quot;</span> &gt;</span>标签<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">let</span> 变量名 = <span class="title function_">ref</span>();</span><br></pre></td></tr></table></figure>
+<p>这样就可以变量名获取标签容器实例<br><br>此外，变量名还可以用于Vue的组件标签中.<br><br>这样通过容器拿到组件实例<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Preson</span> <span class="attr">ref</span>=<span class="string">&quot;per&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;!--html--&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span> <span class="attr">setup</span> <span class="attr">name</span>=<span class="string">&quot;App&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">let</span> per=<span class="title function_">ref</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="variable language_">console</span>.<span class="title function_">log</span>(per.<span class="property">value</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>但是，这样的获取的组件实例的内容是受保护的，无法直接获得其内容。<br><br>需要在目标组件中设施defineExpose({target1,target2})，才能让数据可见<br></p>
+<hr>
+<h2 id="TypeScript的接口"><a href="#TypeScript的接口" class="headerlink" title="TypeScript的接口"></a>TypeScript的接口</h2><p>目的：让数据符合规范，便于调用，否则其他人获取到我们定义的数据时不知道里面的格式无法操作<br><br>格式<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> interface <span class="title class_">PersonData</span>&#123;</span><br><span class="line">    <span class="attr">id</span>:string,</span><br><span class="line">    <span class="attr">name</span>:string,</span><br><span class="line">    <span class="attr">age</span>:number,</span><br><span class="line">    x?:number</span><br><span class="line">&#125;</span><br><span class="line">....</span><br><span class="line"><span class="comment">//使用：</span></span><br><span class="line"><span class="keyword">import</span> &#123;接口所在文件.<span class="property">ts</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;@./...&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>:<span class="title class_">PersonData</span>=&#123;..&#125;</span><br></pre></td></tr></table></figure>
+<p>这样之后在person定义数据时只能用接口中定义了的内容，创建数据时就算name写成nmae也会直接报错。<br><br>而接口中的x？:number表示你<font color="#EE3B3B">可以</font>定义一个名为x，值类型为number的数据，当然也可以不定义。<font color="#EE3B30">但是不加？的必须定义，不定义会报错</font><br></p>
 
       
 
@@ -260,7 +254,7 @@ Promise通过链式调用解决回调地狱问题（.then().then().then()）提�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +268,9 @@ Promise通过链式调用解决回调地狱问题（.then().then().then()）提�
   
 <nav id="article-nav">
   
-    <a href="/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Today算法总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">今日算法总结</div>
+    <a href="/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Today算法总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
