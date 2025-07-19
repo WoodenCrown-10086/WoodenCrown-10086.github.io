@@ -7,17 +7,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>今日算法总结 | NARUTO</title>
+  <title>Archives: 2001/7 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="除自身以外数组的乘积给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。题目数据 保证 数组 _nums_之中任意元素的全部前缀元素和后缀的乘积都在  32 位 整数范围内。请 不要使用除法，且在 O(n) 时间复杂度内完成此题。 难点1，空间复杂度要求_O[n]_2，除了某个元素，前后的所有都要乘">
-<meta property="og:type" content="article">
-<meta property="og:title" content="今日算法总结">
-<meta property="og:url" content="http://example.com/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="NARUTO">
+<meta property="og:url" content="http://example.com/archives/2001/07/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="除自身以外数组的乘积给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。题目数据 保证 数组 _nums_之中任意元素的全部前缀元素和后缀的乘积都在  32 位 整数范围内。请 不要使用除法，且在 O(n) 时间复杂度内完成此题。 难点1，空间复杂度要求_O[n]_2，除了某个元素，前后的所有都要乘">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-16T12:56:24.000Z">
-<meta property="article:modified_time" content="2025-07-16T13:56:51.043Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -161,170 +157,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-今日算法总结" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      今日算法总结
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2001" class="archive-year">2001</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2001-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2001-07-19</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a>
     </h1>
   
 
-        
-        <a href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-16T12:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="除自身以外数组的乘积"><a href="#除自身以外数组的乘积" class="headerlink" title="除自身以外数组的乘积"></a>除自身以外数组的乘积</h2><p>给你一个整数数组 <em>nums</em>，返回 数组 <em>answer</em> ，其中 <em>answer[i]</em> 等于 <em>nums</em> 中除 <em>nums[i]</em> 之外其余各元素的乘积 。<br>题目数据 保证 数组 _nums_之中任意元素的全部前缀元素和后缀的乘积都在  <em>32</em> 位 整数范围内。<br><strong>请 不要使用除法，且在 <em>O(n)</em> 时间复杂度内完成此题。</strong></p>
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><p>1，空间复杂度要求_O[n]_<br>2，除了某个元素，前后的所有都要乘</p>
-<span id="more"></span>
-<h3 style="color:#00FFFF">思路</h3>
-考虑前后缀，前缀乘积与后缀乘积做乘就可以。
-开辟两个额外数组存放前缀与后缀（一次遍历）
-在遍历一次做乘法
+        <div class="article-info info-on-right">
+          
+          
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> productExceptSelf = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> numqian=[<span class="number">1</span>,...nums]</span><br><span class="line">    <span class="keyword">let</span> ans=[...nums]</span><br><span class="line">    numqian.<span class="title function_">push</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">let</span> numhou=[<span class="number">1</span>,...nums]</span><br><span class="line">    numhou.<span class="title function_">push</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        numqian[i+<span class="number">1</span>]=numqian[i]*nums[i]</span><br><span class="line">        numhou[nums.<span class="property">length</span>-i]=numhou[nums.<span class="property">length</span>-i+<span class="number">1</span>]*nums[nums.<span class="property">length</span>-i-<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ans[i]=numqian[i]*numhou[i+<span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<hr>
-<h2 id="41-缺失的第一个正数"><a href="#41-缺失的第一个正数" class="headerlink" title="41. 缺失的第一个正数"></a>41. 缺失的第一个正数</h2><p>给你一个未排序的整数数组 <em>nums</em> ，请你找出其中没有出现的最小的正整数。<br>请你实现时间复杂度为 <em>O(n)</em> 并且只使用常数级别额外空间的解决方案。</p>
-<h3 id="难点-1"><a href="#难点-1" class="headerlink" title="难点"></a>难点</h3><p>1,给的数据正负数都有<br>2，数据有间隔<br>3，时间复杂度要为_O(n)_</p>
-<h3 style="color:#00FFFF">思路</h3>
-1，一开始想直接从1遍历正整数到数组中最大的数字，找到最小的，明显超时
-2，想跳着遍历，先sort从小到大排序，从1开始只遍历当前数据加1，如果1+1在数组中就遍历1＋1，否则判断是否可以放入ans，
-    然后继续遍历，但是下一项是数组中的下一项＋1，知道最后一个，这样即使数很大也只用遍历数组长度次。（可惜倒在sort超时）
-3，正解（灵神的解）
-    排座位，让下标与数据一一对应，第一个对不上的就是答案
-    从第一个座位开始：如果该作为上的数字不等于下边，就把他和它该去的那个位置交换，（因为此时nums[i]我们就认为存的是下标，所以直接交换，那么换过去后那个数字就坐在正确的位置上），然后换过来的继续判断，直到换过来的是负数或者坐对了位置或者超出数组长度的值这是因为超出长度的数据永远没有座位坐，然后到下一个位置判断。！！它虽然坐在这个位置但是后面要是有该坐在这里的人会换回来的，如果没换回来，说明没有这个位置的学生
-
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstMissingPositive = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line"><span class="keyword">let</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(nums[i]&gt;<span class="number">0</span> &amp;&amp; nums[i]&lt;nums.<span class="property">length</span>+<span class="number">1</span> &amp;&amp; nums[i]!==nums[nums[i]-<span class="number">1</span>] )&#123;</span><br><span class="line">        <span class="keyword">let</span> change=nums[i]-<span class="number">1</span>;</span><br><span class="line">        [nums[i],nums[change]]=[nums[change],nums[i]];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums[i]!=i+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> nums.<span class="property">length</span>+<span class="number">1</span></span><br><span class="line">&#125;; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</code></pre>
-<p>注意有可能存在相同的元素，这样可能会导致一直换位置，死循环，所以不能直接用nums[i]&#x3D;&#x3D;i来判断，要用nus[i]!&#x3D;nums[nums[i]-1]<br>这里有点绕，减1是由于数组是0下标开始的，例如num[1]&#x3D;&#x3D;5,意思是这个人应该做到第五个位置，但是第5个位置下标为4，因此要减去1<br>为什么要这个位置和另一个位置作比较呢，而不是解题思路那样自己和下标做比较，这就是由于重复数据的原因，如果不等于，不就是代表<br>这个人应该坐过去但是没有吗？因此交换，如果相等呢？就代表那个人是这个人的克隆人，已经代替这个人坐上去了，因此不用交换了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Promise学习
-        
-      </div>
-    </a>
   
   
-    <a href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -347,8 +222,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
