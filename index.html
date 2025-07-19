@@ -159,6 +159,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-7-19算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2025-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="相交链表"><a href="#相交链表" class="headerlink" title="相交链表"></a>相交链表</h2><p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。<br><img src="/./img/xiangjiaolianbiao.png" alt="相交链表"><br></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的想法就是分别遍历两个头节点，放入数组中，再从后往前遍历两个数组，找到第一个不相同的数据的后面一个。然后再一次遍历两个链表找到两个链表中该数据的位置并判断节点是否相同（防止只是数据相同）<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -394,83 +458,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7-19算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2001-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2001-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="相交链表"><a href="#相交链表" class="headerlink" title="相交链表"></a>相交链表</h2><p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。<br><img src="/./img/xiangjiaolianbiao.png" alt="相交链表"><br></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的想法就是分别遍历两个头节点，放入数组中，再从后往前遍历两个数组，找到第一个不相同的数据的后面一个。然后再一次遍历两个链表找到两个链表中该数据的位置并判断节点是否相同（防止只是数据相同）<br><br>但是由于两个链表长度不一定相同，那么先遍历到的要找到目标值要等待后遍历到然后再比较。判断逻辑很复杂，并且多次遍历链表以及大量额外的空间消耗。<br><br><br><font color="#FF6A6A">正解</font><br><br>对于相交的链表，其相交之后所走过的路程是相同的，不同的只是前面的部分<br><br>假设相交之前A链表的长度为a，B链表的长度为b，共同长度为c，那么可以得到a+c+b&#x3D;b+c+a<br><br>这个等式意味着，走完A链表再从B链表开始走到A与B的相交位置的路程等同于走完B链表再从A链表开始走到A与B的相交位置的路程。所以只需让两个指针从一个链表走完再走另一个链表，他们就会在入口处指向同一个位置<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> getIntersectionNode = <span class="keyword">function</span>(<span class="params">headA, headB</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> p=headA,q=headB;</span><br><span class="line">    <span class="keyword">while</span>(p!==q)&#123;</span><br><span class="line">        p=p?p.<span class="property">next</span>:headB;</span><br><span class="line">        q=q?q.<span class="property">next</span>:headA;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h2><p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。<br><br><br><font color="#FF6A6A">解法</font><br><br>头插法；<br></p>
-<h2 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h2><p> 类似于12321这样的数据，给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。<br></p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p> 很简单的想到全部放入数组，然后从头部和尾部同时遍历，有不同的就返回false，否则返回true<br><br> 这需要额外的O(n)空间以及两次遍历。<br> 或者使用递归，利用递归的特性可以从后向前输出。<br><br> 更好的办法是找到中间节点并将后面的链表反转。然后从头开始比较。<br><br> <font color="#EE9A49">找到中间节点的好办法：</font>使用快慢指针。快指针走到终点，慢指针就在中点mid<br><br>原理：假设链表总长度为x，满指针走了a步时快指针到达终点，那么快指针总共走了2a步到达。此时2a&#x3D;x，因此a&#x3D;x&#x2F;2<br></p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">function</span> <span class="title function_">middleNode</span>(<span class="params">head</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> slow = head, fast = head;</span><br><span class="line">    <span class="keyword">while</span> (fast !== <span class="literal">null</span> &amp;&amp; fast.<span class="property">next</span> !== <span class="literal">null</span>) &#123;</span><br><span class="line">        slow = slow.<span class="property">next</span>;</span><br><span class="line">        fast = fast.<span class="property">next</span>.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">reverseList</span>(<span class="params">head</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> pre = <span class="literal">null</span>, cur = head;</span><br><span class="line">    <span class="keyword">while</span> (cur !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> nxt = cur.<span class="property">next</span>;</span><br><span class="line">        cur.<span class="property">next</span> = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = nxt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> mid = <span class="title function_">middleNode</span>(head);</span><br><span class="line">    <span class="keyword">let</span> head2 = <span class="title function_">reverseList</span>(mid);</span><br><span class="line">    <span class="keyword">while</span> (head2 !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (head.<span class="property">val</span> !== head2.<span class="property">val</span>) &#123; <span class="comment">// 不是回文链表</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.<span class="property">next</span>;</span><br><span class="line">        head2 = head2.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h2><p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。<br></p>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>同样使用快慢指针,如果有环一定会相交。就像操场跑步，有个人一直跑的速度比你快，就会在某个时刻超过你一圈。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hasCycle = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> fast=head,slow=head;</span><br><span class="line">    <span class="keyword">while</span>(fast!==<span class="literal">null</span>&amp;&amp;fast.<span class="property">next</span>!==<span class="literal">null</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        slow=slow.<span class="property">next</span>;</span><br><span class="line">        fast=fast.<span class="property">next</span>.<span class="property">next</span>;</span><br><span class="line">        <span class="keyword">if</span>(slow===fast)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="找到环形链表的起点"><a href="#找到环形链表的起点" class="headerlink" title="找到环形链表的起点"></a>找到环形链表的起点</h3><p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。<br></p>
-<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>上一题中通过快慢指针只能找到两个指针第一次在环里相交的位置但是无法找到入口。<br><br>需要观察＋数学:假设满指针走了a步相遇，那么块指针就走了2a步，假设环外的步是x，环长为r，那么2a-a就是快指针超过一圈后相遇他们之间的步数差，也就是环长：a&#x3D;r,那么a-x&#x3D;r-x，也就是说，只要慢指针再走x步就能走满一圈，此时就是环的入口。<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> detectCycle = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> fast=head,slow=head;</span><br><span class="line">  <span class="keyword">while</span>(fast!=<span class="literal">null</span>&amp;&amp;fast.<span class="property">next</span>!=<span class="literal">null</span>)&#123;</span><br><span class="line">    slow=slow.<span class="property">next</span>;</span><br><span class="line">    fast=fast.<span class="property">next</span>.<span class="property">next</span>;</span><br><span class="line">    <span class="keyword">if</span>(slow==fast)&#123;</span><br><span class="line">        <span class="keyword">while</span>(slow!==head)&#123;</span><br><span class="line">            slow=slow.<span class="property">next</span>;</span><br><span class="line">            head=head.<span class="property">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2001/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
         </p>
       
 
