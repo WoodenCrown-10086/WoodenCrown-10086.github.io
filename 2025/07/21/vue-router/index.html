@@ -7,22 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>今日算法总结-链表反转类 | NARUTO</title>
+  <title>Vue今日学习 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="反转链表二：给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &lt;&#x3D; right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。难点1，从中间反转前后的连接问题。2，边界问题 思路当作反转链表1中反转整个链表来看，将要反转的看作一个，反转过后再将原来断开的位置指向新链表的头，新链表的尾部指向旧链表的尾部边界问题：">
+  <meta name="description" content="Hooks如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今日算法总结-链表反转类">
-<meta property="og:url" content="http://example.com/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="Vue今日学习">
+<meta property="og:url" content="http://example.com/2025/07/21/vue-router/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="反转链表二：给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &lt;&#x3D; right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。难点1，从中间反转前后的连接问题。2，边界问题 思路当作反转链表1中反转整个链表来看，将要反转的看作一个，反转过后再将原来断开的位置指向新链表的头，新链表的尾部指向旧链表的尾部边界问题：">
+<meta property="og:description" content="Hooks如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/fanzhuanlianbiao2.png">
-<meta property="og:image" content="http://example.com/img/liangliangjiaohuan.png">
+<meta property="og:image" content="http://example.com/img/router.png">
 <meta property="article:published_time" content="2025-07-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-21T02:14:35.643Z">
+<meta property="article:modified_time" content="2025-07-21T12:46:05.793Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/fanzhuanlianbiao2.png">
+<meta name="twitter:image" content="http://example.com/img/router.png">
   
     <link rel="alternative" href="/atom.xml" title="NARUTO" type="application/atom+xml">
   
@@ -164,19 +163,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-7-21算法总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue-router" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      今日算法总结-链表反转类
+      Vue今日学习
     </h1>
   
 
         
-        <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <a href="/2025/07/21/vue-router/" class="archive-article-date">
   	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
 </a>
         
@@ -184,17 +183,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="反转链表二："><a href="#反转链表二：" class="headerlink" title="反转链表二："></a>反转链表二：</h2><p>给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &lt;&#x3D; right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。<br><br><img src="/./img/fanzhuanlianbiao2.png" alt="反转链表二"><br><br><font color="#FF8247">难点</font><br><br>1，从中间反转前后的连接问题。<br><br>2，边界问题<br></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>当作反转链表1中反转整个链表来看，将要反转的看作一个，反转过后再将原来断开的位置指向新链表的头，新链表的尾部指向旧链表的尾部<br><br>边界问题：既然要连接那就需要找到开始断开的位置（逻辑上断开），那么这一定是写在循环中判断，如果left位于开头怎么办？<font color="#00FFFF">哨兵节点！</font>增加一个哨兵节点指向链表头。<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> reverseBetween = <span class="keyword">function</span>(<span class="params">head, left, right</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> dummy=<span class="keyword">new</span> <span class="title class_">ListNode</span>();</span><br><span class="line">    dummy.<span class="property">next</span>=head;</span><br><span class="line">    p0=dummy;</span><br><span class="line">    <span class="keyword">let</span> pre=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;left-<span class="number">1</span>;i++)&#123;</span><br><span class="line">      p0=p0.<span class="property">next</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">let</span> curr=p0.<span class="property">next</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;right-left+<span class="number">1</span>;i++)&#123;</span><br><span class="line">      <span class="keyword">let</span> nxt=curr.<span class="property">next</span>;</span><br><span class="line">      curr.<span class="property">next</span>=pre;</span><br><span class="line">      pre=curr;</span><br><span class="line">      curr=nxt;</span><br><span class="line">    &#125;</span><br><span class="line">    p0.<span class="property">next</span>.<span class="property">next</span>=curr;</span><br><span class="line">    p0.<span class="property">next</span>=pre;</span><br><span class="line">    <span class="keyword">return</span> dummy.<span class="property">next</span>;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
+<span id="more"></span>
+<p>比如你用一个获取狗狗图片的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref ,reactive&#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> doglist=<span class="title function_">reactive</span>([<span class="string">&#x27;https://images.dog.ceo/breeds/pembroke/n02113023_6383.jpg&#x27;</span>]);</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getdog</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> res=<span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&#x27;https://dog.ceo/api/breed/pembroke/images/random&#x27;</span>);</span><br><span class="line">        doglist.<span class="title function_">push</span>(res.<span class="property">data</span>.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;doglist,getdog&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你就可以这样封装在useDogs.index中，默认暴露：暴露出来才能能让别人调用。将你要使用的数据与方法返回。<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> useDogs <span class="keyword">from</span> <span class="string">&#x27;@/hooks/useDogs&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> &#123;doglist,getdog&#125;=<span class="title function_">useDogs</span>();</span><br></pre></td></tr></table></figure>
+<p>接下来只需要import这个ts然后将要使用的数据解构出来就可以使用。<br><br>这样只要是与dogs相关的数据和方法就都写在该ts中，达到封装的目的。<br><br>此外，也可以在hooks中写狗子，比如想要在浏览器挂载完成就自动获得一张图片就:onMounted(()&#x3D;&gt;{getdog()})这样就可以。当然也可以在其中写入计算属性、watch等等。<br></p>
 <hr>
-<h2 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h2><p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。<br><br><img src="/./img/liangliangjiaohuan.png" alt="两两交换"><br></p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>可以看作与上一题类似。由于每次交换的步调都是相同的，可以考虑递归求解<br><br>上图可以看出，反转后节点1应该指向节点3，4反转后的头节点4，节点2应该指向节点1，可以看出节点1指向的是下一个反转单元反转后的头节点，同理可得，如果后面还有，那么节点3应该指向它的下一个反转的后的头节点。<br><br>所以可得每次递归传入的参数应该是head.next.next；<br><br>而递归调用应当发生在交换两个节点时修改head节点指向的时候。<br><br>那么递归的终止条件呢？由于两两交换，所以如果只有一个节点应当直接返回head，当然如果head本身为空也应当返回head，？这是因为如果只判断一个的话，那么当链表长度位偶数时，最后一次反转的尾部就没有指向,不是空而是undefined<br><br>当然除了终止条件还要在每一次递归结尾返回新的head，也就是图中的节点2，4.<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> swapPairs = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(head==<span class="literal">null</span>||head.<span class="property">next</span>==<span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> cache=head.<span class="property">next</span>;</span><br><span class="line">  head.<span class="property">next</span>=<span class="title function_">swapPairs</span>(head.<span class="property">next</span>.<span class="property">next</span>);</span><br><span class="line">  cache.<span class="property">next</span>=head;</span><br><span class="line">  <span class="keyword">return</span> cache;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="K个一组反转链表"><a href="#K个一组反转链表" class="headerlink" title="K个一组反转链表"></a>K个一组反转链表</h2><p>给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。<br><br>k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。<br><br>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。<br><br><font color="#FF8247">难点</font><br><br>k个为一组，其实与上一题类似，上一题可以看作两两一组，但是使用递归的话，终止条件不好判断<br><br></p>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>考虑迭代，先计算出链表总长度，然后除以k得到需要反转的次数。再进行循环：<br><br>由于也需要对头节点处理，考虑使用哨兵节点。<br><br>并且进行头插法时们不用每一次都去找到某一段的开头和结尾，直接反转即可，只需要每次反转完k个后将头节点指针指向末尾<br></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    var reverseKGroup = function(head, k) &#123;</span><br><span class="line">   let dummy=new ListNode();</span><br><span class="line">   dummy.next=head;</span><br><span class="line">   let p0=dummy;</span><br><span class="line">    let len=0;</span><br><span class="line">    let find=head;</span><br><span class="line">    while(find)&#123;</span><br><span class="line">      len++;</span><br><span class="line">      find=find.next;</span><br><span class="line">    &#125;</span><br><span class="line">    let curr=p0.next;</span><br><span class="line">    let pre = null;</span><br><span class="line">    while(len&gt;=k)&#123;</span><br><span class="line">      len-=k;</span><br><span class="line">      for(let i=0;i&lt;k;i++)&#123;</span><br><span class="line">        let nxt =curr.next;</span><br><span class="line">        curr.next=pre;</span><br><span class="line">        pre=curr;</span><br><span class="line">        curr=nxt;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      let ca=p0.next;</span><br><span class="line">      p0.next.next=curr;</span><br><span class="line">      p0.next=pre;</span><br><span class="line">      p0=ca;</span><br><span class="line">    &#125;</span><br><span class="line">    return dummy.next;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>目标页面对应的组件。<br><br>key+value就是一组路由，而多个路由由路由器管理这里的路由器不是家里面的路由器而是vue中的路由器，只是功能类似。<br><br>比如对于一个单页面应用，始终只有一个Html如何实现页面的丝滑切换呢。这就需要用到路由。<br><br><img src="/./img/router.png" alt="Router"><br><br>比如这个页面就可以点击首页或新闻切换页面但是地址不变，变的仅仅是地址后的页面路径页面，而路由的工作就是为不同的路径匹配不同的组件。<br><br>需要有一个router文件夹<br><br>在其中创建路由器，需要引入createRouter 以及 createWebHistory(设置路由工作模式，还有其他的)；<br>具体逻辑如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//创建一个路由器</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter,createWebHistory &#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/Home.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">News</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/News.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">About</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/About.vue&#x27;</span>;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">    <span class="attr">history</span>:<span class="title function_">createWebHistory</span>(),<span class="comment">//路由器工作模式</span></span><br><span class="line">    <span class="attr">routes</span>:[<span class="comment">//路由规则</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">Home</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/News&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">News</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/About&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">About</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//暴露出去</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+<p>需要引入组件，（因为要实现不同页面的组件匹配）。<br><br>路由器工作模式必须设立。路由规则存于数组中，元素为一个规则对象，里面是两组匹配，路径以及组件，代表该路径匹配该组件。<br><br>暴露完成后还需要在main.ts中应用app.use(router)应用。只设置匹配还不行，还得将组件展示出来：在对应位置使用”&lt;RouterView’&gt;&lt;&#x2F;RouterView’&gt;（需要引入），要想实现点击切换，就不能用active属性了，因为router需要路径变化，所以需要使用&lt;’RouterLink to&#x3D;”&#x2F;home”&gt;，RouterLink同样是组件，需要引入</p>
+
       
 
       
@@ -252,7 +252,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/21/vue-router/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -266,9 +266,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          今日算法总结-链表反转类
+        
+      </div>
+    </a>
   
-    <a href="/2025/07/21/vue-router/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue今日学习</div>
+  
+    <a href="/2025/07/20/7-20/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">7-20算法总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
