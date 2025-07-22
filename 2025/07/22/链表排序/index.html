@@ -7,13 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2025 | NARUTO</title>
+  <title>链表排序打脑壳 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NARUTO">
-<meta property="og:url" content="http://example.com/archives/2025/index.html">
+  <meta name="description" content="排序链表给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的 自顶向下的归并排序有点打脑壳算法思路:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。找到中间节点时候要断开链表！递归终">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表排序打脑壳">
+<meta property="og:url" content="http://example.com/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="NARUTO">
+<meta property="og:description" content="排序链表给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的 自顶向下的归并排序有点打脑壳算法思路:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。找到中间节点时候要断开链表！递归终">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-22T13:38:35.564Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -157,265 +161,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-链表排序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      链表排序打脑壳
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2025" class="archive-year">2025</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+
+        
+        <a href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="archive-article-date">
   	<time datetime="2025-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">链表排序打脑壳</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h2><p>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。<br><br>你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？<br><br>有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的<br></p>
+<h3 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h3><p>有点打脑壳<br><br><font color="#83f824">算法思路</font>:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。<br><br>找到中间节点时候要断开链表！<br><br>递归终止条件为链表为空或者只有一个节点。<br><br>逻辑就是先找中间节点，然后让头节点等于左边sort的递归，让中间节点下一个(也就是分开后后面那个链表的头节点)，等于右边链表的sort的递归。<br><br>这里的逻辑想了很久才明白</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">function</span> <span class="title function_">midfind</span>(<span class="params">head</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> pre=head;</span><br><span class="line">    <span class="keyword">let</span> slow=head;</span><br><span class="line">    <span class="keyword">let</span> fast=head;</span><br><span class="line">    <span class="keyword">while</span>(fast&amp;&amp;fast.<span class="property">next</span>)&#123;</span><br><span class="line">        pre=slow;</span><br><span class="line">        slow=slow.<span class="property">next</span>;</span><br><span class="line">        fast=fast.<span class="property">next</span>.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pre.<span class="property">next</span>=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hebing=<span class="keyword">function</span>(<span class="params">head1,head2</span>)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> dummy=<span class="keyword">new</span> <span class="title class_">ListNode</span>();</span><br><span class="line">    <span class="keyword">let</span> ca=dummy;</span><br><span class="line">    <span class="keyword">while</span>(head1&amp;&amp;head2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(head1.<span class="property">val</span>&lt;head2.<span class="property">val</span>)&#123;</span><br><span class="line">            ca.<span class="property">next</span>=head1;</span><br><span class="line">            head1=head1.<span class="property">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">           ca.<span class="property">next</span>=head2;</span><br><span class="line">           head2=head2.<span class="property">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ca=ca.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ca.<span class="property">next</span>=head1 ?? head2;</span><br><span class="line">    <span class="keyword">return</span> dummy.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sortList = <span class="keyword">function</span>(<span class="params">head,len=<span class="number">1</span></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(head===<span class="literal">null</span>||head.<span class="property">next</span>===<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> head2=<span class="title function_">midfind</span>(head);</span><br><span class="line"></span><br><span class="line">    head=<span class="title function_">sortList</span>(head);</span><br><span class="line">    head2=<span class="title function_">sortList</span>(head2);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">hebing</span>(head,head2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后再调用合并函数，直接返回。</p>
+<h2 id="自底向上"><a href="#自底向上" class="headerlink" title="自底向上"></a>自底向上</h2><p>太复杂了，还需要修炼。。。</p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">今日算法总结-链表反转类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">今日算法总结-链表反转类</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/21/vue-router/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/21/vue-router/">Vue hooks&amp;Router</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/20/7-20/" class="archive-article-date">
-  	<time datetime="2025-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/20/7-20/">7-20算法总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">VUE今日学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-17T08:50:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/17/Today%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">Today算法总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T04:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/17/Promise%E5%AD%A6%E4%B9%A0/">Promise学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-16T12:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">今日算法总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -438,8 +318,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

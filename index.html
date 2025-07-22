@@ -159,6 +159,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-链表排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">链表排序打脑壳</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2025-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h2><p>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。<br><br>你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？<br><br>有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的<br></p>
+<h3 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h3><p>有点打脑壳<br><br><font color="#83f824">算法思路</font>:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。<br><br>找到中间节点时候要断开链表！<br><br>递归终止条件为链表为空或者只有一个节点。<br><br>逻辑就是先找中间节点，然后让头节点等于左边sort的递归，让中间节点下一个(也就是分开后后面那个链表的头节点)，等于右边链表的sort的递归。<br><br>这里的逻辑想了很久才明白</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-7-21算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
