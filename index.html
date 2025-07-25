@@ -159,6 +159,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-组件通信" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">组件之间的通信</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="archive-article-date">
+  	<time datetime="2025-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>用于父子之间的通信。父组件通过<code>v-bind</code>传递数据，简写为<code>:</code><br><br>例如<code>&lt;Child :a=&#39;123&#39;/&gt;</code>，那么在相应的子组件就要使用<code>defineProps([&#39;a&#39;])</code>接受参数，那么在子组件中就可以使用a数据<br><br>那么如何实现子组件向父组件传送传送数据通信呢？可以通过函数实现！在父组件中定义函数，并且该函数会接收参数，然后使用Props传递该函数,那么子组件使用该函数时就可以通过参数传递数据<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Count</span> :childToFather/&gt;</span><br><span class="line"> <span class="keyword">function</span> <span class="title function_">childToFather</span>(<span class="params">value:string</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在子组件中调用<code>defineProps([&#39;childToFather&#39;])</code>就可以通过事件或者触发直接触发childToFather并传入参数<br><br><font color="#2cb6d8">注意在模板中使用ref数据时，不用<code>.value</code></font><br></p>
+<hr>
+<h2 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h2><p>该方法用于子组件向父组件传递数据通信。<code>&lt;Child @eventname=&quot;callback&quot;</code>其中eventname就是自定义事件名，然后值为回调对象，需要在父组件中定义。<br><br>在子组件中使用emit接收<code>const emit=defineEmits([&#39;eventname&#39;])</code>并通过<code>emit(&#39;eventname&#39;,参数)</code>的方式触发事件。通过参数将数据传递给父组件实现通信.<br></p>
+<hr>
+<h2 id="mitt-任意组件之间的通信"><a href="#mitt-任意组件之间的通信" class="headerlink" title="mitt 任意组件之间的通信"></a>mitt 任意组件之间的通信</h2><p>它的核心原理是发布-订阅模式<br><br>事件中心：Mitt 创建一个中央事件总线（一个简单的 JavaScript 对象）<br><br>事件注册：组件通过 .on() 方法订阅（监听）特定事件<br><br>事件触发：组件通过 .emit() 方法发布（触发）事件并传递数据<br><br>事件移除：通过 .off() 方法取消事件监听<br><br><code>&lt;button @click=&quot;emitter.emit(&#39;send-toy&#39;,toy)&quot;&gt;玩具给LoveTalk玩&lt;/button&gt;</code>通过emit将事件<code>send-toy</code>发布，并指明该事件有一个参数toy要传递（发布者传递）.然后另一个要与之通信的组件需要使用<code>.on</code>绑定该事件，并通过回调函数处理该参数。<br><br>两个组件都需要引入emitter（这个名字是自己定义的）。需要自己建立ts文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">import</span> mitt <span class="keyword">from</span> <span class="string">&quot;mitt&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用mitt得到emitter，emitter能绑定、触发事件</span></span><br><span class="line"><span class="keyword">const</span> emitter=<span class="title function_">mitt</span>();</span><br><span class="line"><span class="comment">//暴露emitter</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> emitter;</span><br></pre></td></tr></table></figure>
+<p>然后import emitter from 该文件位置<br><br><font color="#18c973">注意在组件卸载时解绑事件，否则一直在内存等待触发。（配合生命周期函数）</font><br></p>
+<hr>
+<h2 id="v-model-父子组件之间的通信"><a href="#v-model-父子组件之间的通信" class="headerlink" title="v-model 父子组件之间的通信"></a>v-model 父子组件之间的通信</h2><p>在HTML元素中v-model用于双向绑定，也就是HTML的展示数据与组件中定义的数据实时同步。<br><code>&lt;input v-model=&quot;data&quot; type=&quot;text&quot;&gt;&lt;/input&gt;</code><br><br>其实这是加工过的，其底层实现为<code>&lt;input type=&quot;text&quot; :value=&quot;data&quot; @input=&quot;data=....&quot;&gt;</code>也就是说其实是相当于value值绑定响应式数据达到页面到组件数据的绑定，通过触发input事件实现将input数据实时更新到组件的绑定，简写为<code>v-model</code><br></p>
+<h4 id="v-model-可以应用在组件上"><a href="#v-model-可以应用在组件上" class="headerlink" title="v-model 可以应用在组件上"></a>v-model 可以应用在组件上</h4><p>用法与在HTML元素上相同<code>&lt;Child v-model=&quot;data&quot; /&gt;</code>，同样的其底层原理相当于<code>&lt;Child :modelValue=&quot;data&quot; @update:modelValue=&quot;data=$event&quot;&gt;</code>其中<code>update:modelValue</code>整个是事件名，默认名！！，可以通过在<code>v-model:youreventname</code>自定事件名，<br></p>
+<p>此外通信的子组件上需要一些额外操作(都需要而不是自定义名才需要)<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">defineProps</span>([<span class="string">&#x27;qwe&#x27;</span>,<span class="string">&#x27;pas&#x27;</span>])<span class="comment">//获取数据（事件）</span></span><br><span class="line"><span class="keyword">const</span> emit=<span class="title function_">defineEmits</span>([<span class="string">&#x27;update:qwe&#x27;</span>,<span class="string">&#x27;update:pas&#x27;</span>])<span class="comment">//声明事件</span></span><br></pre></td></tr></table></figure>
+<p>然后通过<code>emit(&#39;事件名&#39;,参数)</code>来触发事件达到通信的目的<br><br><font color="#c6e41b">注意若不<code>v-model:name</code> 自定义事件名，则默认是modelValue或者model-value</font></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-链表排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
