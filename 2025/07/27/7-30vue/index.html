@@ -7,13 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>NARUTO</title>
+  <title>今日vue学习 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NARUTO">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="ShallowRef与ShallowReactive有时候我们只关注浅层数据的变化，而不关注深层数据的变化，如果都使用ref或者reactive就会无法满足ShalowRef与ShallowReactive只处理浅层的响应式比如对于两个数据： 12sum&#x3D;ShallowRef(0)Person&#x3D;ShallowRef(&#123;name:&#x27;huhu&#x27;,age:18&#125;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="今日vue学习">
+<meta property="og:url" content="http://example.com/2025/07/27/7-30vue/index.html">
 <meta property="og:site_name" content="NARUTO">
+<meta property="og:description" content="ShallowRef与ShallowReactive有时候我们只关注浅层数据的变化，而不关注深层数据的变化，如果都使用ref或者reactive就会无法满足ShalowRef与ShallowReactive只处理浅层的响应式比如对于两个数据： 12sum&#x3D;ShallowRef(0)Person&#x3D;ShallowRef(&#123;name:&#x27;huhu&#x27;,age:18&#125;)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-30T12:45:40.720Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -157,128 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-vue项目初创" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: Vue</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/30/vue%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%88%9B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-slot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-7-30vue" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/28/slot/">slot</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/28/slot/" class="archive-article-date">
-  	<time datetime="2025-07-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="默认插槽"><a href="#默认插槽" class="headerlink" title="默认插槽"></a>默认插槽</h2><p>比如想要实现一些相同的布局展示出来<br><br><img src="/./img/whyslot.png" alt="为什么要slot"><br><br>比如要实现图中的功能，但是其中内容的格式是不一样的，比如列表，图片或者视频。普通的方法时为每一个展示写一个组件。<br><br>但是效率低下，对于组件标签，可以使用双标签<code>&lt;Zujian&gt;&lt;/Zujian&gt;</code>,就像普通html标签那样，然后在中间可以写入数据或者html元素，<code>&lt;Zujian&gt;&lt;h2&gt;hello&lt;/h2&gt;&lt;/Zujian&gt;</code>但是它不会在页面展示出来，因为它不知道该放进子组件的哪个地方！<br><br><font size='4px' color="#25c5ec">因此就需要用到插槽slot</font><br><br><code>&lt;slot&gt;&lt;/slot&gt;</code>这就是默认插槽，将其放在子组件中相应位置那么组件双标签中的内容就会默认放入该位置<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/28/slot/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7-30vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/27/7-30vue/">今日vue学习</a>
+    <h1 class="article-title" itemprop="name">
+      今日vue学习
     </h1>
   
 
@@ -294,7 +184,17 @@
         <h2 id="ShallowRef与ShallowReactive"><a href="#ShallowRef与ShallowReactive" class="headerlink" title="ShallowRef与ShallowReactive"></a>ShallowRef与ShallowReactive</h2><p>有时候我们只关注浅层数据的变化，而不关注深层数据的变化，如果都使用ref或者reactive就会无法满足<br><br>ShalowRef与ShallowReactive只处理浅层的响应式<br><br>比如对于两个数据：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum=<span class="title class_">ShallowRef</span>(<span class="number">0</span>)</span><br><span class="line"><span class="title class_">Person</span>=<span class="title class_">ShallowRef</span>(&#123;<span class="attr">name</span>:<span class="string">&#x27;huhu&#x27;</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;)</span><br></pre></td></tr></table></figure>
 <p>这样使用之后就可以直接修改sum呈现响应式，也可以直接修改整个Person呈现响应式，但是<code>Person.value.name=&#39;张三&#39;</code>这样是不不会呈现响应式的，因为对于Person这是深层的数据。<br></p>
-        
+<span id="more"></span>
+<p>也就是说如果只想关注数据的整体而不关注数据的细节，就需要使用ShallowRef或者ShallowReactive。</p>
+<hr>
+<h3 id="toRaw"><a href="#toRaw" class="headerlink" title="toRaw"></a>toRaw</h3><p>用与获取一个响应式对象的源氏i数据，返回的不是响应式数据<br><br>用于临时读取而不引起代理访问开销。<br>比如在某些功能<code>function f(a)</code>接收数据时可能需要对数据做一些修改，但是不想呈现改变，但是数据又是响应式的,比如<code>f1</code>传入的a是响应式的，那么修改回触发视图更新，此时只需要使用<code>toRaw (a)</code>就可以实现临时修改数据而不触发响应式更新<br></p>
+<p>markRaw() 标记数据不可为响应式</p>
+<hr>
+<h3 id="自定义Ref"><a href="#自定义Ref" class="headerlink" title="自定义Ref"></a>自定义Ref</h3><p>背景：某些时候需要一些响应式的特殊处理，比如<code>v-model</code>绑定的input标签，我需要让输入后等待1s再让页面变化，那么普通ref无法实现<br><br>需要使用<font color="#eba930">customRef</font>,首先要import引入，然后调用该方法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> msg = <span class="title function_">customRef</span>(<span class="function">(<span class="params">track,trigger</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>其中<code>get()</code>方法在数据被读取时调用，<code>set()</code>方法在数据被修改时调用，其中参数就是修改后的值，对于customRef回调中的两个参数，其中<code>track</code>作用是告诉VUE，数据很重要，要持续关注，一旦msg变化就要去更新<code>trigger</code>的作用是通知VUE，数据msg更新了，变化了。因此要在get方法一开始就调用track，在set赋值更新后调用<code>trigger</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> msg = <span class="title function_">customRef</span>(<span class="function">(<span class="params">track,trigger</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="title function_">track</span>()</span><br><span class="line">      <span class="keyword">return</span> initVal</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line"></span><br><span class="line">      initVal=value</span><br><span class="line">      <span class="title function_">trigger</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -305,16 +205,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/27/7-30vue/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/27/7-30vue/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2025/07/28/slot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          slot
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组件之间的通信</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -334,463 +302,14 @@
 
 
 
-
-  
-    <article id="post-组件通信" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">组件之间的通信</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2025-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>用于父子之间的通信。父组件通过<code>v-bind</code>传递数据，简写为<code>:</code><br><br>例如<code>&lt;Child :a=&#39;123&#39;/&gt;</code>，那么在相应的子组件就要使用<code>defineProps([&#39;a&#39;])</code>接受参数，那么在子组件中就可以使用a数据<br><br>那么如何实现子组件向父组件传送传送数据通信呢？可以通过函数实现！在父组件中定义函数，并且该函数会接收参数，然后使用Props传递该函数,那么子组件使用该函数时就可以通过参数传递数据<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Count</span> :childToFather/&gt;</span><br><span class="line"> <span class="keyword">function</span> <span class="title function_">childToFather</span>(<span class="params">value:string</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在子组件中调用<code>defineProps([&#39;childToFather&#39;])</code>就可以通过事件或者触发直接触发childToFather并传入参数<br><br><font color="#2cb6d8">注意在模板中使用ref数据时，不用<code>.value</code></font><br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/25/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-链表排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">链表排序打脑壳</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2025-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h2><p>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。<br><br>你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？<br><br>有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的<br></p>
-<h3 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h3><p>有点打脑壳<br><br><font color="#83f824">算法思路</font>:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。<br><br>找到中间节点时候要断开链表！<br><br>递归终止条件为链表为空或者只有一个节点。<br><br>逻辑就是先找中间节点，然后让头节点等于左边sort的递归，让中间节点下一个(也就是分开后后面那个链表的头节点)，等于右边链表的sort的递归。<br><br>这里的逻辑想了很久才明白</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/21/vue-router/">Vue hooks&amp;Router</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/21/vue-router/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/21/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7-21算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">今日算法总结-链表反转类</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="反转链表二："><a href="#反转链表二：" class="headerlink" title="反转链表二："></a>反转链表二：</h2><p>给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &lt;&#x3D; right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。<br><br><img src="/./img/fanzhuanlianbiao2.png" alt="反转链表二"><br><br><font color="#FF8247">难点</font><br><br>1，从中间反转前后的连接问题。<br><br>2，边界问题<br></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>当作反转链表1中反转整个链表来看，将要反转的看作一个，反转过后再将原来断开的位置指向新链表的头，新链表的尾部指向旧链表的尾部<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/20/7-20/">7-20算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/20/7-20/" class="archive-article-date">
-  	<time datetime="2025-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 <br></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由于已经是升序排列，可以定义两个指针从两个链表头开始，定义答案指针从小的链表头开始，每次将两个比较指针较小的那个加入答案链表就能通过一次遍历得到答案。<br><br>与灵神的解类似，不过他是先新建了一个哨兵指针，再去比较小的，这样就不用去单独判断头节点大小与空链表，更加简洁。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/20/7-20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7-19算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="相交链表"><a href="#相交链表" class="headerlink" title="相交链表"></a>相交链表</h2><p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。<br><img src="/./img/xiangjiaolianbiao.png" alt="相交链表"><br></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的想法就是分别遍历两个头节点，放入数组中，再从后往前遍历两个数组，找到第一个不相同的数据的后面一个。然后再一次遍历两个链表找到两个链表中该数据的位置并判断节点是否相同（防止只是数据相同）<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">VUE今日学习</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="WatchEffect"><a href="#WatchEffect" class="headerlink" title="WatchEffect"></a>WatchEffect</h2><p>对于普通watch监视，需要传入参数确定监视对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watch</span>([target1,target2],<span class="function">(<span class="params">newValue,oldValue</span>)=&gt;</span>&#123;...&#125;)</span><br></pre></td></tr></table></figure>
-<p>那么如果监视数据很多，就要一个一个传入很多参数。<br><br>而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？<br><br>当你在回调中使用哪些数据就监视哪些数据。<br><br>它们的区别可以理解成：你帮我看着张三、李四，吃饭就告诉我  你看着，有人吃饭就告诉我<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watchEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -813,8 +332,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
