@@ -208,6 +208,69 @@
 
 
   
+    <article id="post-今日算法树树树树树太难了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/29/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E5%A4%AA%E9%9A%BE%E4%BA%86/">树和递归已晕</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/29/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E5%A4%AA%E9%9A%BE%E4%BA%86/" class="archive-article-date">
+  	<time datetime="2025-07-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="路径总的和"><a href="#路径总的和" class="headerlink" title="路径总的和"></a>路径总的和</h2><p>给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。<br><br>同样是使用前缀和，两点的前缀和之差就是这两个点之间的路径和。对于树也是一样，可以用深度优先，遍历并逐步累加前缀和，对于链表为什么可以一次遍历就得到结果？<br><br>对于目标数值，当我们得到前缀和后，可以枚举任意两点，带入公式：<code>pre[j]-pre[i]==target</code>满足这样条件的两个点就是结果之一，，那么对于上面的公式可以通过移项得到<code>pre[j]-target==pre[i]</code>，也就是说，如果某个点前缀和与target的差值存在前缀和中，那么就存在一个结果。<font color="#1dcae9">并且要注意的是其中j是从后往前枚举，i是从前往后枚举</font>， 那么能与该点配合得到target的点一定在在前方！！！，因此，我们可以一次遍历，然后每次吧前面的加入<code>map</code>然后对每个点减去target进行<code>map</code>中进行查找。<br><br>那么对于树来说是同样的，只是通过深度优先遍历去得到前缀和<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/29/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E5%A4%AA%E9%9A%BE%E4%BA%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-slot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -465,69 +528,6 @@
 
 
   
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/21/vue-router/">Vue hooks&amp;Router</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/21/vue-router/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/21/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-7-21算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -563,6 +563,69 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/21/vue-router/">Vue hooks&amp;Router</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/21/vue-router/" class="archive-article-date">
+  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/21/vue-router/">展开全文 >></a>
         </p>
       
 
@@ -691,73 +754,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/19/7-19%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">VUE今日学习</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="WatchEffect"><a href="#WatchEffect" class="headerlink" title="WatchEffect"></a>WatchEffect</h2><p>对于普通watch监视，需要传入参数确定监视对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watch</span>([target1,target2],<span class="function">(<span class="params">newValue,oldValue</span>)=&gt;</span>&#123;...&#125;)</span><br></pre></td></tr></table></figure>
-<p>那么如果监视数据很多，就要一个一个传入很多参数。<br><br>而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？<br><br>当你在回调中使用哪些数据就监视哪些数据。<br><br>它们的区别可以理解成：你帮我看着张三、李四，吃饭就告诉我  你看着，有人吃饭就告诉我<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watchEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
         </p>
       
 

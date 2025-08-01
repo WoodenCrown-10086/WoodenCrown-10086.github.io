@@ -7,21 +7,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Vue hooks&amp;Router | NARUTO</title>
+  <title>Archives: 2001/7 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hooks如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue hooks&amp;Router">
-<meta property="og:url" content="http://example.com/2025/07/21/vue-router/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="NARUTO">
+<meta property="og:url" content="http://example.com/archives/2001/07/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="Hooks如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/router.png">
-<meta property="article:published_time" content="2025-07-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-22T10:53:12.633Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/router.png">
   
     <link rel="alternative" href="/atom.xml" title="NARUTO" type="application/atom+xml">
   
@@ -163,170 +157,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-router" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Vue hooks&amp;Router
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2001" class="archive-year">2001</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2001/07/31/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/" class="archive-article-date">
+  	<time datetime="2001-07-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2001-07-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2001/07/31/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/">今日VUE开发app登录界面</a>
     </h1>
   
 
-        
-        <a href="/2025/07/21/vue-router/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
-<span id="more"></span>
-<p>比如你用一个获取狗狗图片的功能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref ,reactive&#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> doglist=<span class="title function_">reactive</span>([<span class="string">&#x27;https://images.dog.ceo/breeds/pembroke/n02113023_6383.jpg&#x27;</span>]);</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getdog</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> res=<span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&#x27;https://dog.ceo/api/breed/pembroke/images/random&#x27;</span>);</span><br><span class="line">        doglist.<span class="title function_">push</span>(res.<span class="property">data</span>.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;doglist,getdog&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你就可以这样封装在useDogs.index中，默认暴露：暴露出来才能能让别人调用。将你要使用的数据与方法返回。<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> useDogs <span class="keyword">from</span> <span class="string">&#x27;@/hooks/useDogs&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> &#123;doglist,getdog&#125;=<span class="title function_">useDogs</span>();</span><br></pre></td></tr></table></figure>
-<p>接下来只需要import这个ts然后将要使用的数据解构出来就可以使用。<br><br>这样只要是与dogs相关的数据和方法就都写在该ts中，达到封装的目的。<br><br>此外，也可以在hooks中写狗子，比如想要在浏览器挂载完成就自动获得一张图片就:onMounted(()&#x3D;&gt;{getdog()})这样就可以。当然也可以在其中写入计算属性、watch等等。<br></p>
-<hr>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>目标页面对应的组件。<br><br>key+value就是一组路由，而多个路由由路由器管理这里的路由器不是家里面的路由器而是vue中的路由器，只是功能类似。<br><br>比如对于一个单页面应用，始终只有一个Html如何实现页面的丝滑切换呢。这就需要用到路由。<br><br><img src="/./img/router.png" alt="Router"><br><br>比如这个页面就可以点击首页或新闻切换页面但是地址不变，变的仅仅是地址后的页面路径页面，而路由的工作就是为不同的路径匹配不同的组件。<br><br>需要有一个router文件夹<br><br>在其中创建路由器，需要引入createRouter 以及 createWebHistory(设置路由工作模式，还有其他的)；<br>具体逻辑如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//创建一个路由器</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter,createWebHistory &#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/Home.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">News</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/News.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">About</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/About.vue&#x27;</span>;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">    <span class="attr">history</span>:<span class="title function_">createWebHistory</span>(),<span class="comment">//路由器工作模式</span></span><br><span class="line">    <span class="attr">routes</span>:[<span class="comment">//路由规则</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">Home</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/News&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">News</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/About&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">About</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//暴露出去</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
-<p>需要引入组件，（因为要实现不同页面的组件匹配）。<br><br>路由器工作模式必须设立。路由规则存于数组中，元素为一个规则对象，里面是两组匹配，路径以及组件，代表该路径匹配该组件。<br><br>暴露完成后还需要在main.ts中应用app.use(router)应用。只设置匹配还不行，还得将组件展示出来：在对应位置使用<code>&lt;RouterView&gt;&lt;/RouterView&gt;</code>（需要引入），要想实现点击切换，就不能用active属性了，因为router需要路径变化，所以需要使用<code>&lt;RouterLink to=&quot;/home&quot;&gt;</code>，RouterLink同样是组件，需要引入.</p>
-<h4 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h4><p>区分普通组件与路由组件？：所有显示的写了类似于<code>&lt;Demo/&gt;</code>来渲染的组件都是普通组件。<br><br><br>路由组件一般放在pages或者view文件夹中，<br><br><br>通过点击导航栏消失了的组件都被卸载了，需要时，或者重新点击时再重新挂载。<br><br>路由器的两种工作模式：1 history模式，优点是URL更美观，不带<code>#</code>，缺点是需要服务器配合处理路径，否则会报404.<br><br><br>2hash模式，优点是兼容性更好，不用服务器配合，缺点是路径中带有<code>#</code>，且seo不好优化。<br><br><br>RouterLink中to的两种写法，第一种是字符串形式，第二种和是对象形式:to&#x3D;”{path:’’}”注意对象形式要加上<code>：</code>以及<code>&quot;</code><br><br><br>路由命名：可以为每一个路由规则命名，然后再to中用name:’’的形式也能调用。</p>
-<hr>
-<h2 id="路由嵌套"><a href="#路由嵌套" class="headerlink" title="路由嵌套"></a>路由嵌套</h2><p>比如一个导航栏的展示框中还能通过点击跳转，新闻页面通过点击具体的新闻展示新闻内容.那么此时就需要子路由也就是嵌套路由。<br><br><font color="#e77408ff">规则</font>:再对应的路由规则下添加子路由，格式为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;xinwen&quot;</span>,</span><br><span class="line">        <span class="attr">path</span>:<span class="string">&#x27;/News&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>:<span class="title class_">News</span>,</span><br><span class="line">        <span class="attr">children</span>:[</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">name</span>:<span class="string">&#x27;xiangxi&#x27;</span>,</span><br><span class="line">                <span class="attr">path</span>:<span class="string">&#x27;detail/:id/:title/:content&#x27;</span>,</span><br><span class="line">                <span class="attr">component</span>:<span class="title class_">Detail</span>,</span><br><span class="line">                <span class="title function_">props</span>(<span class="params">route</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> route.<span class="property">params</span></span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<p>上例中的children。其中的内容与一个普通的路由规则一致<br><br><font color="#e5f50f">但是</font>：子路由中的path不用加斜杠<code>/</code>了。然后在相应位置设置RouterView以及RouterLink即可。</p>
-<hr>
-<h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><p>why？比如上述的点击查看新闻功能，如何直到点击的是哪个新闻，展示组件展示什么样的内容呢？这就需要路由传参<br><br>路由中有两种参数：<code>query</code>以及 <code>params</code><br><br>query中直接在to后的连接后面加参数即可<code>to=&quot;/news/detail/?id=haha&quot;</code>但是这样的参数只能传固定字符串，若要传js数据如何呢在to前加<code>:</code>似乎可以，但是这将会让to后的所有都变成js语句，我们需要将网址部分为字符串，参数部分为js语句：这就需要用到<font color="#ce1f1f">模板字符串</font>：只需要将<code>`</code>包裹住地址即可，模板字符串中提供了使用js的方法<code>$&#123;&#125;</code>这样就能在{}中写入js数据进行参数传递<br><br><code>:to=&quot;`/news/detail?$&#123;news.id&#125;&#125;`&quot;&gt;</code><br><br>上述是第一种写法，第二种是写成对象形式：<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:to=<span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">                name:&#x27;xiangxi&#x27;,</span></span><br><span class="line"><span class="string">                query:&#123;</span></span><br><span class="line"><span class="string">                    id:news.id,</span></span><br><span class="line"><span class="string">                    title:news.title,</span></span><br><span class="line"><span class="string">                    content:news.content</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">             &#125;&quot;</span></span><br></pre></td></tr></table></figure>
-<p><font color="#ce1f1f">注意</font>仍然需要<code>:</code>以及<code>&quot;</code>包裹住，然后在目标位置使用<code>const route = useRoute</code>再在标签中使用<code>&#123;&#123;route.query.id&#125;&#125;</code>使用数据。<br><br>通过将route结构出query可以避免重复写route,<font color="#e5f50f">但是</font>从一个响应式数据直接结构出来的数据会失去响应式，因此需要加上<code>toRefs()</code>包住。<br></p>
-<h4 id="对于params"><a href="#对于params" class="headerlink" title="对于params"></a>对于params</h4><p>直接在路径中添加参数，例如：<code>/news/detail/p1/p2</code>但是路由会认为是路径，然后找不到报错，只需要在路由中配置一下即可。<br><br>在路由的path参数中添加占位<code>path:detail/:p1/:p2</code>这样路由器就知道detail路径后的是参数了。<br><br>params参数的两中写法基本与query相同，唯一要注意的点是params的对象式写法是不能写<code>path</code>，而需要用<code>name:</code>来跳转。且参数不能是对象或者数组，占位符占了多少就要传多少参数。<br><br><br></p>
-<hr>
-<h2 id="路由的props配置"><a href="#路由的props配置" class="headerlink" title="路由的props配置"></a>路由的props配置</h2><p>之前接受参数后需要<code>route.params.参数</code>虽然可以通过结构消除route，但是仍需要写params或者query。<br><br>通过配置路由pros并接受就能解决。只需要在组件中加上<code>props:true</code>就可以，接受时在目标组件中引入<code>defineProps</code>然后通过调用<code>defineProps</code>函数来接受<br><br><code>defineProps[&quot;p1&quot;,&quot;p2&quot;,....]</code>这样就可以直接使用参数p1,p2…<br>这样时将路由所有收到的参数作为props传给路由目标组件<br><br><br><br>第二种写法：<font color="#e5f50f">函数式</font>：自己决定讲什么作为props传给组件。<code>props( can)&#123; return&#123; &#125;&#125;</code>props函数有一个参数，这个参数就是路由信息对象，其中不仅有query、params以及其他信息直接将这个对象中你需要的数据return即可例如需要传query就可以<code>return can.query</code><br></p>
-<hr>
-<h2 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h2><p>使用RouterLink去跳转连接时会被浏览器转化为<code>&lt;a&gt;</code>标签，比如要在首页停留3秒自动跳转，或者输入正确用户名密码后自动跳转时<code>RouterLink</code>就不行了，因为跳转要使用RouterLink但是跳转有条件需要使用js判断或者执行函数，若在执行函数中调用<code>ROuterLink</code>是非法的，因为RouterLink是组件，是结构，应当在<code>&lt;template&gt;</code>标签中<br><br>此时就需要用到编程式导航，也就是脱离<code>RouterLink</code>实现跳转。<br><br>需要在<code>&lt;script&gt;</code>中引入useRouter。注意是<code>userRouter</code>而不是<code>useRoute</code>。<br><br>这样就拿到了路由器实例，就能够操纵组件<code>router.push(&#39;/newdata&#39;)</code>或者使用replace。</p>
-<hr>
-<p>重定向：让指定的路径重新定位到另一个路径<br>在一级路由加上一条规则:<code>&#123;path:&quot;/&quot;,redirect:&quot;/newpath&quot;&#125;</code></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/21/vue-router/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          今日算法总结-链表反转类
-        
-      </div>
-    </a>
   
   
-    <a href="/2025/07/20/7-20/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">7-20算法总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -349,8 +222,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

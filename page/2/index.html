@@ -159,6 +159,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">VUE今日学习</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2025-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="WatchEffect"><a href="#WatchEffect" class="headerlink" title="WatchEffect"></a>WatchEffect</h2><p>对于普通watch监视，需要传入参数确定监视对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watch</span>([target1,target2],<span class="function">(<span class="params">newValue,oldValue</span>)=&gt;</span>&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+<p>那么如果监视数据很多，就要一个一个传入很多参数。<br><br>而WatchEffect不用传参数，直接写回调，呢么&#x3D;&#x3D;那么如何确定监视的哪些数据呢？<br><br>当你在回调中使用哪些数据就监视哪些数据。<br><br>它们的区别可以理解成：你帮我看着张三、李四，吃饭就告诉我  你看着，有人吃饭就告诉我<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watchEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/18/vue%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Today算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -327,6 +394,70 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-登录页面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2001/07/31/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/">今日VUE开发app登录界面</a>
+    </h1>
+  
+
+        
+        <a href="/2001/07/31/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/" class="archive-article-date">
+  	<time datetime="2001-07-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2001-07-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS变量"><a href="#CSS变量" class="headerlink" title="CSS变量"></a>CSS变量</h2><p>为了可以像JS那样定义变量</p>
+<p><font color='#1ce085'>原生支持：</font>格式<code>--valName：value</code>,不能忘记双横杠，如果要定义全局变量记得用<code>：root&#123;&#125;</code>包裹起来，使用变量时通过<code>var(--valName)</code>来使用，只要是css样式中的值都可以定义，例如可以定义：<code>--borderstyle:2px solid red</code>,也就是css属性值可以怎么写，变量值就可以怎么写,除了全局也可以在类中直接定义，那么总用域就在类中，<br><br>  值得注意的是，当使用第三方组件库时，想要更改其一些组件样式单纯的<code>:root</code>作用域是无法覆盖的，因此需要用到<code>:root:root</code> 提升作用域。<br>   <br><br><font color='#1ce085'>工具支持</font>：例如<code>sass</code>,使用这个举要在<code>style</code>标签中加上<code>lang=&quot;scss&quot;</code>，<br>定义变量规则为：<code>$valName:value</code>,最后运行时会被打包成浏览器支持的css。<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2001/07/31/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/">展开全文 >></a>
         </p>
       
 
