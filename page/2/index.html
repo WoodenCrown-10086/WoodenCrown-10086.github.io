@@ -159,70 +159,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-7-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/20/7-20/">7-20算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/20/7-20/" class="archive-article-date">
-  	<time datetime="2025-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 <br></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由于已经是升序排列，可以定义两个指针从两个链表头开始，定义答案指针从小的链表头开始，每次将两个比较指针较小的那个加入答案链表就能通过一次遍历得到答案。<br><br>与灵神的解类似，不过他是先新建了一个哨兵指针，再去比较小的，这样就不用去单独判断头节点大小与空链表，更加简洁。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/20/7-20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-7-19算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -522,6 +458,70 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/16/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-call函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2001/08/10/call%E5%87%BD%E6%95%B0/">call的原理</a>
+    </h1>
+  
+
+        
+        <a href="/2001/08/10/call%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2001-08-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2001-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="从手写call函数发现其原理"><a href="#从手写call函数发现其原理" class="headerlink" title="从手写call函数发现其原理"></a>从手写call函数发现其原理</h2><p>对于一个函数function1，<code>fuction1.call(a)</code>表示让<code>function1</code>的this指向a，这个相信都知道，但是why？？<br><br>通过手写call函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">mycall</span>=<span class="keyword">function</span>(<span class="params">target,args</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="variable language_">this</span>!==<span class="string">&#x27;function&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Type Error&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    target=target|| (<span class="keyword">typeof</span> <span class="variable language_">window</span>!==<span class="string">&#x27;undefined&#x27;</span>?<span class="attr">window</span>:globalThis)</span><br><span class="line">    target.<span class="property">fn</span>=<span class="variable language_">this</span></span><br><span class="line">    <span class="keyword">let</span> result = target.<span class="title function_">fn</span>(...args)</span><br><span class="line">    <span class="keyword">delete</span> target.<span class="property">fn</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params">name</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">a</span>,name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cc=&#123;<span class="attr">a</span>:<span class="string">&#x27;callcall&#x27;</span>&#125;</span><br><span class="line">f1.<span class="title function_">mycall</span>(cc,<span class="string">&#x27;huhuhu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2001/08/10/call%E5%87%BD%E6%95%B0/">展开全文 >></a>
         </p>
       
 

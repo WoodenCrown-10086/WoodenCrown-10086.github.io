@@ -7,17 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>NARUTO</title>
+  <title>今日算法 | NARUTO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="var canFinish &#x3D; function(numCourses, prerequisites) {      const p&#x3D;Array.from({length : numCourses},()&#x3D;&gt;[]);     for(let it of prerequisites){         p[it[1]].push(it[0])     }     const already &#x3D; Ar">
+  <meta name="description" content="字符串解码题目描述给定一个经过编码的字符串，返回它解码后的字符串。 编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NARUTO">
-<meta property="og:url" content="http://example.com/2025/08/03/8-3/index.html">
+<meta property="og:title" content="今日算法">
+<meta property="og:url" content="http://example.com/2025/08/08/8-12%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="NARUTO">
-<meta property="og:description" content="var canFinish &#x3D; function(numCourses, prerequisites) {      const p&#x3D;Array.from({length : numCourses},()&#x3D;&gt;[]);     for(let it of prerequisites){         p[it[1]].push(it[0])     }     const already &#x3D; Ar">
+<meta property="og:description" content="字符串解码题目描述给定一个经过编码的字符串，返回它解码后的字符串。 编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-08-03T11:35:36.307Z">
-<meta property="article:modified_time" content="2025-08-03T12:21:02.668Z">
+<meta property="article:published_time" content="2025-08-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-12T14:16:44.297Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -161,38 +161,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-8-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-8-12算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      今日算法
+    </h1>
+  
+
+        
+        <a href="/2025/08/08/8-12%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2025-08-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-08</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        var canFinish = function(numCourses, prerequisites) {
+        <h2 id="字符串解码"><a href="#字符串解码" class="headerlink" title="字符串解码"></a>字符串解码</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个经过编码的字符串，返回它解码后的字符串。<br></p>
+<p>编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。<br><br>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。<br><br>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。<br><br>例如<br><br>输入：s &#x3D; “3[a]2[bc]”<br><br>输出：”aaabcbc”<br></p>
+<p><font color='#e4942d'>思路</font>：一开始想的用栈的方法，对于字符串<code>&quot;3[a]2[bc]&quot;</code>,创建两个栈，一个用来存放左括号的位置索引，一个用于存放这个左括号前面的数组字是多少。<br><br>然后就遍历每个字符，不是数字或者中括号就加入答案，如果是数字，那么就向后遍历找到第一个右括号，并在途中将遇到的左括号索引以及其前面的数字压栈，再遇到一个右括号时候就弹栈，并且由于有第一个位置的索引，直接将两个括号之间用<code>slice</code>方法分割出来，然后用<code>repeat</code>方法去重复另一个栈对应的数字。但是想法很美好，现实很骨感，没有考虑到数据的一般性，这种方法只能处理纯数字加<code>[]</code>模式，因为一旦有普通字符串，在其中，那么如果直接将普通字符串加入答案的话，那么肯定要判断每个字符，这样就会将 <code>[]</code>中的字符串直接加入答案而没有重复了,</p>
 
-    const p=Array.from({length : numCourses},()=>[]);
-    for(let it of prerequisites){
-        p[it[1]].push(it[0])
-    }
-    const already = Array(numCourses).fill(0);
-    function dfs(x){
-        already[x]=1;
-        for(let m of p[x]){
-            if(already[m]===1||already[m]===0 && dfs(m)){
-                return true;
-            }
-            
-        }
-        already[x]=2;
-        return false;
-    }
-
-    for(let i=0;i<numCourses;i++){
-        if(already[i]===0 && dfs(i)){
-            return false
-        }
-    }
-    return true
-}
-console.log(canFinish(2,[[1,0],[0,1]]))
       
 
       
@@ -250,7 +242,7 @@ console.log(canFinish(2,[[1,0],[0,1]]))
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/08/03/8-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/08/08/8-12%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,18 +256,9 @@ console.log(canFinish(2,[[1,0],[0,1]]))
   
 <nav id="article-nav">
   
-    <a href="/2025/08/06/8-10js/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JS的Promise的一些东西
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/07/30/vue%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%88%9B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2025/08/06/8-10js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS的Promise的一些东西</div>
       <i class="icon-circle-right"></i>
     </a>
   

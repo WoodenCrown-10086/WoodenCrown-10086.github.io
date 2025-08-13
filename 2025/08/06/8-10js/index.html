@@ -17,7 +17,7 @@
 <meta property="og:description" content="Promise的易错点对于Promise的then()，其中必须传函数作为回调，如果不是函数就会忽略，并将接收的值直接透传,直到遇到穿了函数的地方或者链式结尾。Promise状态具有不变性，当状态由pendding转化未fulfiled或者rejected的时候，就不会再因为调用resolve或者rejected而改变自己的状态then()的返回值是一个Promise，，而这个Promise的状态">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-10T14:00:41.804Z">
+<meta property="article:modified_time" content="2025-08-13T14:05:18.960Z">
 <meta property="article:author" content="HuXiao">
 <meta name="twitter:card" content="summary">
   
@@ -182,6 +182,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Promise的易错点"><a href="#Promise的易错点" class="headerlink" title="Promise的易错点"></a>Promise的易错点</h2><p>对于Promise的<code>then()</code>，其中必须传函数作为回调，<font color='#16cece'>如果不是函数就会忽略，并将接收的值直接透传</font>,直到遇到穿了函数的地方或者链式结尾。<br><br><br><br>Promise状态具有不变性，当状态由<code>pendding</code>转化未<code>fulfiled</code>或者<code>rejected</code>的时候，就不会再因为调用<code>resolve</code>或者<code>rejected</code>而改变自己的状态<br><br><br><code>then()</code>的返回值是一个<code>Promise</code>，，而这个Promise的状态，是根据返回值决定的，如果返回值是普通类型如，基本数据类型或者普通对象类型 <font color='#e0214a'>包括new的Error</font>,那么返回的Promise状态都将是<code>fulfiled</code>并且，其值为返回的值。<br><br>但是由于then中可以手动<code>return Promise</code>那么此时返回的状态就根据返回的这个<code>Promise</code>的状态决定<br><br></p>
+<span id="more"></span>
 <div style="
   border: 2px solid;
   border-radius: 10px;
@@ -189,14 +190,17 @@
   background: linear-gradient(135deg, #87CEEB, #1d4ea8ff);
   color: #42131dff;
 ">
-需要注意的是：<br>
-`then`回调中，`return new Error`和`throw Error`是完全不同的结果，`return new Error`是返回了一个对象，这个对象是一个Error对象，所以then返回的Promise状态仍然是fulfiled，只不过fulfiled的值是一个Error，<br>
-但是对于throw Error，是直接抛出异常，会直接让 then 返回一个 rejected 状态的 Promise，其 reject 的值就是抛出的错误对象（Error）
-</div>
-<br><br>
 
+<p>需要注意的是：<br><br><code>then</code>回调中，<code>return new Error</code>和<code>throw Error</code>是完全不同的结果，<code>return new Error</code>是返回了一个对象，这个对象是一个Error对象，所以then返回的Promise状态仍然是fulfiled，只不过fulfiled的值是一个Error，<br><br>但是对于throw Error，是直接抛出异常，会直接让 then 返回一个 rejected 状态的 Promise，其 reject 的值就是抛出的错误对象（Error）</p>
+</div>
+
+<p><br><br></p>
 <p><code>then()</code>中可以传递两个回调函数，其中第一个回调会被用于处理fulfiled状态，第二个函数会被用于处理rejected状态，用第二个参数与用<code>catch</code>的区别就是，catch会捕捉链上所有的 <font color='#2779e4'>未被处理</font> 的错误.<br><br>当一个 <code>rejected</code> 状态的 <code>Promise</code> 被 <code>.catch()</code> 或 <code>.then()</code> 的第二个参数<code>（onRejected）</code>处理时，只要回调函数没有抛出新的错误或返回另一个 <code>rejected Promise</code>，它就会返回一个 <code>fulfilled</code> 状态的 <code>Promise</code>。</p>
 <h4 id="对于微任务"><a href="#对于微任务" class="headerlink" title="对于微任务"></a>对于微任务</h4><p>Promise中的代码是同步的，遇到resolve或者rejcted只是将状态由<code>pendding</code>转化未fulfiled或者rejected，并不是现在进入微任务队列而是 <font color='#2ae989'>在调用<code>then</code>或者<code>catch</code>的时候才被放入微任务队列</font></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;promise1&#x27;</span>, res)</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">finally</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;finally1&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line">  .<span class="title function_">finally</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;finally2&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;result&#x27;</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;promise2&#x27;</span>, res)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+
+<p>对于这两个Promise本身，其代码是同步的，也就是将then或者finally放入微任务队列这个操作是同步的，只有then本身是异步的，所以将Promise1的then放入微任务队列后，其finally需等待then的执行结束返回后才能入队，所以直接执行第二个Promise，由于第二个Promise的finally在前，因此直接将finally2入队，其后的then需要等待finally执行结束，因此暂时不会入队，此时微任务队列中只有Promise1的then和Promise2的finally，然后执行微任务队列，Promise1的then执行结束，然后Promise1的finally入队，然后执行Promise2的finally然后Promise2的then入队，然后执行Promise1的finally和Promise2的then</p>
 
       
 
@@ -269,9 +273,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2025/08/08/8-12%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          今日算法
+        
+      </div>
+    </a>
   
-    <a href="/2025/08/03/8-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2025/07/29/%E4%BB%8A%E6%97%A5%E7%AE%97%E6%B3%95%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E6%A0%91%E5%A4%AA%E9%9A%BE%E4%BA%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树和递归已晕</div>
       <i class="icon-circle-right"></i>
     </a>
   

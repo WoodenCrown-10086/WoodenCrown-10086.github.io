@@ -159,6 +159,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-8-12算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/08/8-12%E7%AE%97%E6%B3%95/">今日算法</a>
+    </h1>
+  
+
+        
+        <a href="/2025/08/08/8-12%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2025-08-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串解码"><a href="#字符串解码" class="headerlink" title="字符串解码"></a>字符串解码</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个经过编码的字符串，返回它解码后的字符串。<br></p>
+<p>编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。<br><br>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。<br><br>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。<br><br>例如<br><br>输入：s &#x3D; “3[a]2[bc]”<br><br>输出：”aaabcbc”<br></p>
+<p><font color='#e4942d'>思路</font>：一开始想的用栈的方法，对于字符串<code>&quot;3[a]2[bc]&quot;</code>,创建两个栈，一个用来存放左括号的位置索引，一个用于存放这个左括号前面的数组字是多少。<br><br>然后就遍历每个字符，不是数字或者中括号就加入答案，如果是数字，那么就向后遍历找到第一个右括号，并在途中将遇到的左括号索引以及其前面的数字压栈，再遇到一个右括号时候就弹栈，并且由于有第一个位置的索引，直接将两个括号之间用<code>slice</code>方法分割出来，然后用<code>repeat</code>方法去重复另一个栈对应的数字。但是想法很美好，现实很骨感，没有考虑到数据的一般性，这种方法只能处理纯数字加<code>[]</code>模式，因为一旦有普通字符串，在其中，那么如果直接将普通字符串加入答案的话，那么肯定要判断每个字符，这样就会将 <code>[]</code>中的字符串直接加入答案而没有重复了,</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/08/08/8-12%E7%AE%97%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-8-10js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,22 +245,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Promise的易错点"><a href="#Promise的易错点" class="headerlink" title="Promise的易错点"></a>Promise的易错点</h2><p>对于Promise的<code>then()</code>，其中必须传函数作为回调，<font color='#16cece'>如果不是函数就会忽略，并将接收的值直接透传</font>,直到遇到穿了函数的地方或者链式结尾。<br><br><br><br>Promise状态具有不变性，当状态由<code>pendding</code>转化未<code>fulfiled</code>或者<code>rejected</code>的时候，就不会再因为调用<code>resolve</code>或者<code>rejected</code>而改变自己的状态<br><br><br><code>then()</code>的返回值是一个<code>Promise</code>，，而这个Promise的状态，是根据返回值决定的，如果返回值是普通类型如，基本数据类型或者普通对象类型 <font color='#e0214a'>包括new的Error</font>,那么返回的Promise状态都将是<code>fulfiled</code>并且，其值为返回的值。<br><br>但是由于then中可以手动<code>return Promise</code>那么此时返回的状态就根据返回的这个<code>Promise</code>的状态决定<br><br></p>
-<div style="
-  border: 2px solid;
-  border-radius: 10px;
-  padding: 10px;
-  background: linear-gradient(135deg, #87CEEB, #1d4ea8ff);
-  color: #42131dff;
-">
-需要注意的是：<br>
-`then`回调中，`return new Error`和`throw Error`是完全不同的结果，`return new Error`是返回了一个对象，这个对象是一个Error对象，所以then返回的Promise状态仍然是fulfiled，只不过fulfiled的值是一个Error，<br>
-但是对于throw Error，是直接抛出异常，会直接让 then 返回一个 rejected 状态的 Promise，其 reject 的值就是抛出的错误对象（Error）
-</div>
-<br><br>
-
-<p><code>then()</code>中可以传递两个回调函数，其中第一个回调会被用于处理fulfiled状态，第二个函数会被用于处理rejected状态，用第二个参数与用<code>catch</code>的区别就是，catch会捕捉链上所有的 <font color='#2779e4'>未被处理</font> 的错误.<br><br>当一个 <code>rejected</code> 状态的 <code>Promise</code> 被 <code>.catch()</code> 或 <code>.then()</code> 的第二个参数<code>（onRejected）</code>处理时，只要回调函数没有抛出新的错误或返回另一个 <code>rejected Promise</code>，它就会返回一个 <code>fulfilled</code> 状态的 <code>Promise</code>。</p>
-<h4 id="对于微任务"><a href="#对于微任务" class="headerlink" title="对于微任务"></a>对于微任务</h4><p>Promise中的代码是同步的，遇到resolve或者rejcted只是将状态由<code>pendding</code>转化未fulfiled或者rejected，并不是现在进入微任务队列而是 <font color='#2ae989'>在调用<code>then</code>或者<code>catch</code>的时候才被放入微任务队列</font></p>
-
+        
       
 
       
@@ -208,128 +258,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/08/06/8-10js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-8-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        var canFinish = function(numCourses, prerequisites) {
-
-    const p=Array.from({length : numCourses},()=>[]);
-    for(let it of prerequisites){
-        p[it[1]].push(it[0])
-    }
-    const already = Array(numCourses).fill(0);
-    function dfs(x){
-        already[x]=1;
-        for(let m of p[x]){
-            if(already[m]===1||already[m]===0 && dfs(m)){
-                return true;
-            }
-            
-        }
-        already[x]=2;
-        return false;
-    }
-
-    for(let i=0;i<numCourses;i++){
-        if(already[i]===0 && dfs(i)){
-            return false
-        }
-    }
-    return true
-}
-console.log(canFinish(2,[[1,0],[0,1]]))
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/08/03/8-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue项目初创" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: Vue</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/30/vue%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%88%9B/">展开全文 >></a>
         </p>
       
 
@@ -777,6 +705,70 @@ console.log(canFinish(2,[[1,0],[0,1]]))
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/21/vue-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-7-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/20/7-20/">7-20算法总结</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/20/7-20/" class="archive-article-date">
+  	<time datetime="2025-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 <br></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由于已经是升序排列，可以定义两个指针从两个链表头开始，定义答案指针从小的链表头开始，每次将两个比较指针较小的那个加入答案链表就能通过一次遍历得到答案。<br><br>与灵神的解类似，不过他是先新建了一个哨兵指针，再去比较小的，这样就不用去单独判断头节点大小与空链表，更加简洁。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/20/7-20/">展开全文 >></a>
         </p>
       
 
