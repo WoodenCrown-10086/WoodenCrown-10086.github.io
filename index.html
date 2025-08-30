@@ -159,6 +159,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-copycopy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/26/copycopy/">一个点哪里复制哪里的脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2025/08/26/copycopy/" class="archive-article-date">
+  	<time datetime="2025-08-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="有些页面不让复制！但我就想复制"><a href="#有些页面不让复制！但我就想复制" class="headerlink" title="有些页面不让复制！但我就想复制"></a>有些页面不让复制！但我就想复制</h2><p>当在面试鸭看一些题的时候，部分内容看不到，于是想要复制问题出去搜，发现根本无法选中，更别说复制了<br><br>于是想到了通过写一个脚本让以后可以方便的复制想要的内容。</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>当鼠标放上去点击一下就可以复制元素的内容，感觉挺简单但是实际写起来还有点复杂<br></p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>首先是获取点击的目标元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!canCopy)<span class="keyword">return</span></span><br><span class="line">            <span class="keyword">const</span> clickElement=event.<span class="property">target</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;点击了&#x27;</span>,clickElement)</span><br><span class="line">            <span class="keyword">let</span> textCopy;</span><br><span class="line">            textCopy=clickElement.<span class="property">textContent</span>||clickElement.<span class="property">innerText</span>;</span><br><span class="line">            <span class="keyword">if</span>(textCopy &amp;&amp; textCopy.<span class="title function_">trim</span>()!==<span class="string">&#x27;&#x27;</span>)&#123;</span><br><span class="line">            <span class="title function_">copy</span>(textCopy)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<p>获取元素内容如果存在就调用复制函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">copy</span>(<span class="params">text</span>) &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;成功进入&#x27;</span>)</span><br><span class="line">   navigator.<span class="property">clipboard</span>.<span class="title function_">writeText</span>(text).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;复制成功:&#x27;</span>, text);</span><br><span class="line">            <span class="title function_">showSuccess</span>(text)</span><br><span class="line"></span><br><span class="line">        &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;复制失败:&#x27;</span>, err);</span><br><span class="line">        &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>用Navigator对象实现将内容放入剪切板，showSuccess()函数就是用来提示的，显示复制了没以及复制的东西，通过<code>createElement</code>方法实现</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/08/26/copycopy/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-call函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -706,69 +775,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/21/vue-router/">Vue hooks&amp;Router</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/21/vue-router/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>如果不使用hooks，那么组合式API的数据与方法是杂糅在一起的。比如方法1以及其需要用到的数据以及方法二以及其需要用到的数据就是融合在一起的，不便于区分。那么和选项式API的区别就不大.<br><br>而hooks就是让一个功能的数据与方法封装在一起。这样可以独立开发不同的功能再进行合并。<br><br>hooks是一个ts或js文件，命名规则为useXxx，Xxx就是你的功能名。<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/21/vue-router/">展开全文 >></a>
         </p>
       
 
