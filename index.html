@@ -159,6 +159,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-5-7需求拆解skills" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/05/07/2026-5-7%E9%9C%80%E6%B1%82%E6%8B%86%E8%A7%A3skills/">需求拆解skill</a>
+    </h1>
+  
+
+        
+        <a href="/2026/05/07/2026-5-7%E9%9C%80%E6%B1%82%E6%8B%86%E8%A7%A3skills/" class="archive-article-date">
+  	<time datetime="2026-05-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为啥要"><a href="#为啥要" class="headerlink" title="为啥要"></a>为啥要</h2><p>每次通过描述给ai生成，ai不能准确理解我的想法，当我把想法通过plan模式规划好后，ai一气呵成执行，根本不可控，白白浪费token</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>将需求拆解为Coding的AI更好理解的点，指导后续Coding任务，给AI明确清晰的任务规划</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>通过claude的skill模板编写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="attr">name</span>: prd-to-coding</span><br><span class="line"><span class="attr">description</span>: 当用户提出一个具体需求或者明确需要生成代码，比如“帮我把以下需求生成代码”、“依据以下文档进行开发”等，或者给出一个需求文档时，以及使用plan模式时，自动触发</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># prdToCoding</span><br><span class="line">你是一个资深的开发教练和架构师，你的任务是将模糊宏大的需求拆解为独立的、可协商的、有价值的、可测试的原子任务，为生产代码提供精确的的逻辑输入</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="title class_">Describe</span> the goal <span class="keyword">of</span> <span class="variable language_">this</span> skill <span class="keyword">in</span> <span class="number">1</span>-<span class="number">2</span> sentences. --&gt;</span><br><span class="line"></span><br><span class="line">## <span class="title class_">When</span> to use</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 当用户明确指明后续需要生成代码</span><br><span class="line"><span class="number">2.</span> 当用户提供了一个需求文档或者需求描述，并且需要将其拆解为具体的开发任务</span><br><span class="line"><span class="number">3.</span> 当用户使用了plan模式，并且需要将需求拆解为具体的开发</span><br><span class="line">&lt;!-- <span class="title class_">List</span> the contexts or user phrases that should trigger <span class="variable language_">this</span> skill. --&gt;</span><br><span class="line"></span><br><span class="line">## <span class="title class_">Input</span></span><br><span class="line">- 描述一个项目或者需求的架构，比如：“帮我设计一个日程软件，用vue搭建，使用<span class="variable constant_">TS</span>，状态管理使用pinia”</span><br><span class="line">- 给出一个具体的需求文档，如：“以下是一个需求文档，帮我把它拆解为开发任务：xxx.<span class="property">md</span>”</span><br><span class="line">&lt;!-- <span class="title class_">Describe</span> what the user <span class="attr">provides</span>: pasted text, file path, format, etc. --&gt;</span><br><span class="line"></span><br><span class="line">## <span class="title class_">Process</span></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="title class_">Step</span>-by-step instructions <span class="keyword">for</span> what <span class="title class_">Claude</span> should <span class="keyword">do</span>. --&gt;</span><br><span class="line">拆解原则</span><br><span class="line"><span class="number">1.</span> 拒绝横向分层，禁止拆解为：写<span class="variable constant_">UI</span>，写接口，这种宏大的概念</span><br><span class="line"><span class="number">2.</span> 每个拆解的story都必须是一个完整可运行的业务逻辑的最小单元</span><br><span class="line"><span class="number">3.</span> 拆解后的任务要达到，ai阅读任务后能够直接写出对应的函数、接口或者组件逻辑</span><br><span class="line">拆分维度</span><br><span class="line"><span class="number">1.</span> 路径，区分正常路径与异常路径</span><br><span class="line"><span class="number">2.</span> 按照业务逻辑的判断条件切片</span><br><span class="line"><span class="number">3.</span> 根据不同实体状态拆分</span><br><span class="line"><span class="number">4.</span> 按照原子动作，<span class="variable constant_">CRUD</span>或者状态流转拆分，比如某个组件的展示和点击后的执行动作逻辑</span><br><span class="line"></span><br><span class="line">## <span class="title class_">Output</span> format</span><br><span class="line">输出格式：markdown文件</span><br><span class="line">输出文件到./claude/prdCodingPlan目录下</span><br><span class="line">内容：</span><br><span class="line">业务描述</span><br><span class="line">- 任务<span class="number">1</span>：xxx详细描述</span><br><span class="line">- 任务<span class="number">2</span>：xxx详细描述</span><br><span class="line">- 任务<span class="number">3</span>：xxx详细描述</span><br><span class="line">重点关注</span><br><span class="line">- 任务<span class="number">1</span>：应当关注哪些点，或者说这个任务的核心是什么</span><br><span class="line">...以此类推</span><br><span class="line">流程描述</span><br><span class="line">- 任务<span class="number">1</span>：这个任务的输入是什么，输出是什么，输入输出格式，下一步会到哪里，如果有输出，需要给到哪里</span><br><span class="line">&lt;!-- <span class="title class_">Describe</span> the expected <span class="attr">output</span>: markdown task list, <span class="title class_">JSON</span>, code files, etc. --&gt;</span><br><span class="line"></span><br><span class="line">## <span class="title class_">References</span></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="title class_">List</span> any reference files <span class="keyword">in</span> references/ that <span class="title class_">Claude</span> should read, and when. --&gt;</span><br><span class="line">&lt;!-- <span class="title class_">Example</span>: <span class="title class_">Read</span> <span class="string">`references/task-schema.md`</span> when generating structured task output. --&gt;</span><br><span class="line"></span><br><span class="line">## <span class="title class_">Notes</span></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="title class_">Edge</span> cases, constraints, or anything <span class="keyword">else</span> worth knowing. --&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="展开全文查看拆解效果"><a href="#展开全文查看拆解效果" class="headerlink" title="展开全文查看拆解效果"></a>展开全文查看拆解效果</h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/05/07/2026-5-7%E9%9C%80%E6%B1%82%E6%8B%86%E8%A7%A3skills/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-copycopy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -740,70 +808,6 @@
 
 
   
-    <article id="post-7-21算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">今日算法总结-链表反转类</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2025-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="反转链表二："><a href="#反转链表二：" class="headerlink" title="反转链表二："></a>反转链表二：</h2><p>给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &lt;&#x3D; right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。<br><br><img src="/./img/fanzhuanlianbiao2.png" alt="反转链表二"><br><br><font color="#FF8247">难点</font><br><br>1，从中间反转前后的连接问题。<br><br>2，边界问题<br></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>当作反转链表1中反转整个链表来看，将要反转的看作一个，反转过后再将原来断开的位置指向新链表的头，新链表的尾部指向旧链表的尾部<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/21/7-21%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -818,7 +822,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 HuXiao
+    		&copy; 2026 HuXiao
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
