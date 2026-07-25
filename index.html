@@ -159,6 +159,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-7-25代码写入前查看定义" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/06/07/2026-7-25%E4%BB%A3%E7%A0%81%E5%86%99%E5%85%A5%E5%89%8D%E6%9F%A5%E7%9C%8B%E5%AE%9A%E4%B9%89/">三思而后行skill</a>
+    </h1>
+  
+
+        
+        <a href="/2026/06/07/2026-7-25%E4%BB%A3%E7%A0%81%E5%86%99%E5%85%A5%E5%89%8D%E6%9F%A5%E7%9C%8B%E5%AE%9A%E4%B9%89/" class="archive-article-date">
+  	<time datetime="2026-06-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么要这个skill"><a href="#为什么要这个skill" class="headerlink" title="为什么要这个skill"></a>为什么要这个skill</h2><p>原因是用reasonix帮助我构建Agent项目时，它写的代码太过时了，出现了很多次传入不存在参数，或者使用不存或者弃用参数的情况，这本身是小问题我可以在vscode中明显查看并修复，但是我的项目是一个e2e的aicoding的Agent所以如果我自己的agent出现这个问题可能让后续维护或者他自己review给出更大成本，所以让其在落笔前三思而后行，或许很多错误他自己编译运行时自己也能发现，<br>感觉协程skills也不合适，后面把这部分功能改写成工具或者在codeReview时调用</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">name: verify-before-code</span><br><span class="line"><span class="section">description: 写代码前严格查证所有 API、函数、方法、第三方库的字段名、参数、返回值类型定义，确保可行性后再用</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># verify-before-code</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 触发时机</span></span><br><span class="line">在<span class="strong">**写任何代码之前**</span>调用本 skill。特别是：</span><br><span class="line"><span class="bullet">-</span> 使用第三方库的 API（ai SDK、e2b、React、Next.js 等）</span><br><span class="line"><span class="bullet">-</span> 访问对象的属性/字段</span><br><span class="line"><span class="bullet">-</span> 调用函数/方法并依赖其返回值类型</span><br><span class="line"><span class="bullet">-</span> 传递参数给任何函数</span><br><span class="line"></span><br><span class="line"><span class="section">## 核心原则</span></span><br><span class="line"><span class="strong">**永远不要猜测 API 签名。在使用之前必须查证。**</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 查证流程</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 1. 第三方库 API</span></span><br><span class="line">对于 <span class="code">`node_modules`</span> 中的库：</span><br><span class="line"><span class="bullet">-</span> 先 <span class="code">`grep`</span> 搜索 <span class="code">`.d.ts`</span> 类型定义文件确认准确的字段名、参数名、返回值类型</span><br><span class="line"><span class="bullet">-</span> 检查是否有 <span class="code">`@deprecated`</span> 标记</span><br><span class="line"><span class="bullet">-</span> 检查是否存在同名替代 API</span><br><span class="line"></span><br><span class="line"><span class="section">### 2. 字段/属性名</span></span><br><span class="line">访问对象的字段时（如 <span class="code">`part.textDelta`</span>、<span class="code">`tc.args`</span>）：</span><br><span class="line"><span class="bullet">-</span> 先 <span class="code">`read_file`</span> 查看对应的 <span class="code">`.d.ts`</span> 类型定义</span><br><span class="line"><span class="bullet">-</span> 确认字段名的精确拼写（大小写敏感）</span><br><span class="line"><span class="bullet">-</span> 不要假设字段名——之前犯过 <span class="code">`textDelta→text`</span>、<span class="code">`args→input`</span>、<span class="code">`result→output`</span>、<span class="code">`usage→totalUsage`</span> 的错误</span><br><span class="line"></span><br><span class="line"><span class="section">### 3. 函数参数</span></span><br><span class="line">传递参数给函数时（如 <span class="code">`streamText(&#123; maxSteps: 15 &#125;)`</span>）：</span><br><span class="line"><span class="bullet">-</span> 先查看函数的类型签名，确认参数名是否存在</span><br><span class="line"><span class="bullet">-</span> 检查参数是否被重命名或替换（如 <span class="code">`maxSteps→stopWhen: stepCountIs(n)`</span>）</span><br><span class="line"></span><br><span class="line"><span class="section">### 4. 返回值</span></span><br><span class="line">使用函数返回值时：</span><br><span class="line"><span class="bullet">-</span> 查看返回类型定义</span><br><span class="line"><span class="bullet">-</span> 如果返回 <span class="code">`Promise`</span>，确保使用 <span class="code">`await`</span></span><br><span class="line"><span class="bullet">-</span> 如果返回对象有多个可能形态（union type），考虑所有分支</span><br><span class="line"></span><br><span class="line"><span class="section">## 禁止行为</span></span><br><span class="line"><span class="bullet">-</span> ❌ 凭记忆或经验猜测 API 字段名</span><br><span class="line"><span class="bullet">-</span> ❌ 假设 &quot;v6 有 X，v7 应该也有 X&quot;</span><br><span class="line"><span class="bullet">-</span> ❌ 看到编译报错后盲目用 <span class="code">`as any`</span> 绕过</span><br><span class="line"><span class="bullet">-</span> ❌ 不看类型定义直接写代码然后让用户测试发现 bug</span><br><span class="line"></span><br><span class="line"><span class="section">## 正确示例</span></span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F; 用户要我访问某个字段<br>&#x2F;&#x2F; 我: 先 grep node_modules&#x2F;ai&#x2F;dist&#x2F;index.d.ts 看 TextStreamTextDeltaPart 的定义<br>&#x2F;&#x2F; 发现: { type: ‘text-delta’, id: string, text: string }<br>&#x2F;&#x2F; 于是用 part.text 而非 part.textDelta ✅</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/06/07/2026-7-25%E4%BB%A3%E7%A0%81%E5%86%99%E5%85%A5%E5%89%8D%E6%9F%A5%E7%9C%8B%E5%AE%9A%E4%B9%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-5-7需求拆解skills" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -744,73 +809,9 @@
 
 
   
-    <article id="post-链表排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">链表排序打脑壳</a>
-    </h1>
-  
-
-        
-        <a href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2025-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="排序链表"><a href="#排序链表" class="headerlink" title="排序链表"></a>排序链表</h2><p>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。<br><br>你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？<br><br>有时间空间复杂度要求，暴力法或者放入数组排序都是不可取的<br></p>
-<h3 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h3><p>有点打脑壳<br><br><font color="#83f824">算法思路</font>:将链从中间一分为二，分别进行排序，再将两个链表分别再一分为二，分别排序，直到分为只有一个元素，再合并起来。<br><br>找到中间节点时候要断开链表！<br><br>递归终止条件为链表为空或者只有一个节点。<br><br>逻辑就是先找中间节点，然后让头节点等于左边sort的递归，让中间节点下一个(也就是分开后后面那个链表的头节点)，等于右边链表的sort的递归。<br><br>这里的逻辑想了很久才明白</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/07/22/%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
